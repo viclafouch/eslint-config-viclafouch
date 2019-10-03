@@ -9,16 +9,14 @@ These are my settings for ESLint and Prettier
 2. Then we need to install everything needed by the config:
 
 ```
-npx install-peerdeps --dev @viclafouch/eslint-react-config
+npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 ```
 
 3. Your `.eslintrc` file should look like this:
 
 ```json
 {
-  "extends": [
-    "@viclafouch/eslint-react-config"
-  ]
+  "extends": ["@viclafouch/eslint-config-viclafouch"]
 }
 ```
 
@@ -56,5 +54,5 @@ Once you have done. You probably want your editor to lint and fix for you.
 ## With Create React App
 
 1. You gotta eject first `npm run eject` or `yarn eject`
-1. Run `npx install-peerdeps --dev @viclafouch/eslint-react-config`
-1. Crack open your `package.json` and replace `"extends": "react-app"` with `"extends": "@viclafouch/eslint-react-config"`
+1. Run `npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch`
+1. Crack open your `package.json` and replace `"extends": "react-app"` with `"extends": ["@viclafouch/eslint-config-viclafouch"]`

@@ -1,5 +1,5 @@
 {
-  "name": "@viclafouch/eslint-react-config",
+  "name": "@viclafouch/eslint-config-viclafouch",
   "version": "1.0.0",
   "description": "Eslint and Prettier Setup",
   "main": "index.js",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viclafouch/eslint-react-config.git"
+    "url": "git+https://github.com/viclafouch/eslint-config-viclafouch.git"
   },
   "author": "Victor de la Fouchardiere",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/viclafouch/eslint-react-config/issues"
+    "url": "https://github.com/viclafouch/eslint-config-viclafouch/issues"
   },
-  "homepage": "https://github.com/viclafouch/eslint-react-config#readme",
+  "homepage": "https://github.com/viclafouch/eslint-config-viclafouch#readme",
   "peerDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
