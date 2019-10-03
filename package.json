@@ -1,6 +1,6 @@
 {
   "name": "@viclafouch/eslint-config-viclafouch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslint and Prettier Setup",
   "main": "index.js",
   "keywords": [
