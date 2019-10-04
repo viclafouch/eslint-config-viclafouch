@@ -48,7 +48,7 @@ Once you have done. You probably want your editor to lint and fix for you.
     "editor.formatOnSave": false
   },
   "eslint.autoFixOnSave": true,
-  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "prettier.disableLanguages": ["javascript", "javascriptreact"]
   ```
 
 ## With Create React App
