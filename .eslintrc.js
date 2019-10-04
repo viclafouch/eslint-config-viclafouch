@@ -67,12 +67,12 @@ module.exports = {
     "comma-dangle": 0,
     "max-len": 0,
     "react/prop-types": 0,
+    "react/display-name": 0,
     "import/no-unresolved": 0,
     "import/no-named-as-default": 0,
     "import/extensions": 0,
     "no-underscore-dangle": 0,
     "consistent-return": 0,
-    "react/display-name": 1,
     "react/no-array-index-key": 0,
     "react/react-in-jsx-scope": 0,
     "react/prefer-stateless-function": 0,
@@ -122,6 +122,9 @@ module.exports = {
       }
     ],
     "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/label-has-for": 2,
+    "jsx-a11y/role-has-required-aria-props": 2,
+    "jsx-a11y/role-supports-aria-props": 2,
     "jsx-a11y/anchor-is-valid": [
       "warn",
       {
