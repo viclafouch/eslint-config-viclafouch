@@ -1,6 +1,6 @@
 {
   "name": "@viclafouch/eslint-config-viclafouch",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Eslint and Prettier Setup",
   "main": "index.js",
   "keywords": [
@@ -11,10 +11,6 @@
     "config",
     "prettier"
   ],
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viclafouch/eslint-config-viclafouch.git"
@@ -25,30 +21,13 @@
     "url": "https://github.com/viclafouch/eslint-config-viclafouch/issues"
   },
   "homepage": "https://github.com/viclafouch/eslint-config-viclafouch#readme",
-  "peerDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^2.1.2",
-    "prettier": "^1.18.2"
-  },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^2.1.2",
-    "prettier": "^1.18.2"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "prettier": "^2.0.5"
   }
 }
