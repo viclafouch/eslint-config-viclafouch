@@ -40,6 +40,21 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 },
 ```
 
+## With VS Code
+
+Once you have done. You probably want your editor to lint and fix for you.
+
+1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+2. Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. Click to the `{}` icon in the top right corner and add this :
+
+```js
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
 ## With Create React App
 
 1. You gotta eject first `npm run eject` or `yarn eject`
