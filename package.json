@@ -1,7 +1,7 @@
 {
   "name": "@viclafouch/eslint-config-viclafouch",
   "version": "1.1.0",
-  "description": "Eslint and Prettier Setup",
+  "description": "ESLint and Prettier Config from Victor de la Fouchardiere",
   "main": "index.js",
   "keywords": [
     "javascript",
@@ -15,12 +15,18 @@
     "type": "git",
     "url": "git+https://github.com/viclafouch/eslint-config-viclafouch.git"
   },
-  "author": "Victor de la Fouchardiere",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/viclafouch/eslint-config-viclafouch/issues"
-  },
+  "author": "Victor de la Fouchardiere <victor.delafouchardiere@gmail.com>",
+  "license": "MIT",
   "homepage": "https://github.com/viclafouch/eslint-config-viclafouch#readme",
+  "peerDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "prettier": "^2.0.5"
+  },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.6.0",
@@ -29,5 +35,9 @@
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
     "prettier": "^2.0.5"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
   }
 }

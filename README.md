@@ -2,6 +2,13 @@
 
 These are my settings for ESLint and Prettier
 
+## What it does
+* Lints JavaScript based on the latest standards
+* Fixes issues and formatting errors with Prettier
+* Lints + Fixes inside of html script tags
+* Lints + Fixes React via eslint-config-airbnb
+* You can see all the [rules here](https://github.com/wesbos/eslint-config-wesbos/blob/master/.eslintrc.js) - these generally abide by the code written in my courses. You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
+
 ## Local / Per Project Install
 
 1. If you don't already have a `package.json` file, create one with `npm init`.
@@ -12,16 +19,19 @@ These are my settings for ESLint and Prettier
 npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 ```
 
-3. Your `.eslintrc` file should look like this:
+3. You can see in your package.json there are now a big list of devDependencies.
+
+4. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
 
 ```json
 {
-  "extends": ["@viclafouch/eslint-config-viclafouch"]
+  "extends": [
+    "@viclafouch/eslint-config-viclafouch"
+  ]
 }
 ```
 
-
-4. You can add two scripts to your package.json to lint and/or fix:
+5. You can add two scripts to your package.json to lint and/or fix:
 
 ```json
 "scripts": {
@@ -29,27 +39,6 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
   "lint:fix": "eslint . --fix"
 },
 ```
-
-## With VS Code
-
-Once you have done. You probably want your editor to lint and fix for you.
-
-1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-2. Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. Click to the `{}` icon in the top right corner and add this :
-
-  ```js
-  "editor.detectIndentation": false,
-  "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  "eslint.autoFixOnSave": true,
-  "prettier.disableLanguages": ["javascript", "javascriptreact"]
-  ```
 
 ## With Create React App
 
