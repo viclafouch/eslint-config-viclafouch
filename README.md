@@ -3,10 +3,10 @@
 These are my settings for ESLint and Prettier
 
 ## What it does
+
 * Lints JavaScript based on the latest standards
 * Fixes issues and formatting errors with Prettier
 * Lints + Fixes inside of html script tags
-* You can see all the [rules here](https://github.com/wesbos/eslint-config-wesbos/blob/master/.eslintrc.js) - these generally abide by the code written in my courses. You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
 
 ## Local / Per Project Install
 
