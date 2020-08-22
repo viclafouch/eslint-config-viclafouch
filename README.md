@@ -1,6 +1,6 @@
-# Eslint / Prettier Setup of viclafouch
+# Eslint / Prettier Setup of viclafouch 📦
 
-These are my settings for ESLint and Prettier 📦
+These are my settings for ESLint and Prettier ⚡️ 
 
 ## What it does
 
