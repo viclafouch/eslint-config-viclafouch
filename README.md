@@ -1,12 +1,12 @@
 # Eslint / Prettier Setup of viclafouch
 
-These are my settings for ESLint and Prettier
+These are my settings for ESLint and Prettier 📦
 
 ## What it does
 
 * Lints JavaScript based on the latest standards
 * Fixes issues and formatting errors with Prettier
-* Lints + Fixes inside of html script tags
+* Check for accessibility rules on JSX elements.
 
 ## Local / Per Project Install
 
