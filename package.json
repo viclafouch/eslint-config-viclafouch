@@ -3,9 +3,6 @@
   "version": "2.0.0",
   "description": "ESLint and Prettier Config from Victor de la Fouchardiere",
   "main": "index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
     "javascript",
     "ecmascript",
