@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['react', 'simple-import-sort'],
+  plugins: ['react', 'simple-import-import'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
