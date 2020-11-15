@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['react', 'simple-import-import'],
+  plugins: ['react', 'simple-import-sort'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -23,7 +23,7 @@ module.exports = {
   },
   rules: {
     'react/prop-types': 'off',
-    'simple-import-sort/sort': 'error',
+    'simple-import-sort/imports': 'error',
     'prettier/prettier': [
       'error',
       {
@@ -41,7 +41,7 @@ module.exports = {
     {
       files: ['*.jsx', '*.js'],
       rules: {
-        'simple-import-sort/sort': [
+        'simple-import-sort/imports': [
           'error',
           {
             groups: [
