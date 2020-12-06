@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/%40viclafouch%2Feslint-config-viclafouch.svg)](https://badge.fury.io/js/%40viclafouch%2Feslint-config-viclafouch)
+
 # Eslint / Prettier Setup of viclafouch 📦
 
 These are my settings for ESLint and Prettier ⚡️ 
