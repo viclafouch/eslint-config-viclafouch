@@ -2,9 +2,8 @@ module.exports = {
   plugins: ['react', 'simple-import-sort'],
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
+    'airbnb',
+    'airbnb/hooks',
     'plugin:prettier/recommended'
   ],
   env: {
