@@ -4,6 +4,20 @@
 
 These are my ESLint and Prettier settings for a React.js project ⚡️
 
+
+# Table of Contents
+
+- [Eslint / Prettier Setup of @viclafouch 📦](#eslint--prettier-setup-of-viclafouch-)
+- [Table of Contents](#table-of-contents)
+  - [What it does](#what-it-does)
+  - [Local / Per Project Install](#local--per-project-install)
+  - [If you use JavaScript](#if-you-use-javascript)
+    - [Scripts](#scripts)
+  - [If you use TypeScript](#if-you-use-typescript)
+    - [Scripts](#scripts-1)
+  - [With VS Code](#with-vs-code)
+  - [With Create React App](#with-create-react-app)
+
 ## What it does
 
 * Lints JavaScript based on the latest standards
