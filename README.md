@@ -24,6 +24,8 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 
 4. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
 
+## If you use JavaScript
+
 ```json
 {
   "extends": [
@@ -32,12 +34,55 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 }
 ```
 
-5. You can add two scripts to your package.json to lint and/or fix:
+Then, you can remove these unnecessary packages (you don't need the TypeScript support)
+
+```diff
+"devDependencies": {
+- "@typescript-eslint/eslint-plugin": "5.4.0",
+- "@typescript-eslint/parser": "5.4.0",
+- "typescript": "4.5.2"
+},
+```
+
+### Scripts
+
+You can add two scripts to your package.json to lint and/or fix your code:
 
 ```json
 "scripts": {
   "lint": "eslint .",
-  "lint:fix": "eslint . --fix"
+  "lint:fix": "npm run lint -- --fix",
+},
+```
+## If you use TypeScript
+
+```json
+{
+  "extends": [
+    "@viclafouch/eslint-config-viclafouch/typescript"
+  ]
+}
+```
+
+Then, you can remove these unnecessary packages (you don't the Babel parser, we use `@typescript-eslint/parser`).
+
+
+```diff
+"devDependencies": {
+- "@babel/core": "7.16.0",
+- "@babel/eslint-parser": "7.16.3"
+...
+},
+```
+
+### Scripts
+
+You can add two scripts to your package.json to lint and/or fix your code:
+
+```json
+"scripts": {
+  "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx",
+  "lint:fix": "npm run lint -- --fix",
 },
 ```
 
@@ -46,7 +91,7 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 Once you have done. You probably want your editor to lint and fix for you.
 
 1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-2. Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. Click to the `{}` icon in the top right corner and add this :
+2. Now we need to setup some VS Code settings. Create a `.vscode` folder at your root project, and create a `settings.json` file in this folder. Then, add this little config:
 
 ```js
 {
