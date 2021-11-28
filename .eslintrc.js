@@ -7,14 +7,20 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended'
   ],
-  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    es6: true,
+    node: true
+  },
+  parser: '@babel/eslint-parser',
   settings: {
     react: {
       version: 'detect'
     }
   },
   parserOptions: {
-    ecmaVersion: 2020,
+    requireConfigFile: false,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true
@@ -23,6 +29,11 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
+    'react/jsx-props-no-spreading': 0,
+    'react/function-component-definition': [
+      2,
+      { namedComponents: 'arrow-function' }
+    ],
     'prettier/prettier': [
       'error',
       {
@@ -32,7 +43,9 @@ module.exports = {
         tabWidth: 2,
         jsxSingleQuote: false,
         trailingComma: 'none',
-        arrowParens: 'avoid'
+        endOfLine: 'auto',
+        bracketSameLine: false,
+        arrowParens: 'always'
       }
     ]
   },
@@ -46,7 +59,7 @@ module.exports = {
             groups: [
               // Packages. `react` related packages come first.
               // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-              ['^react', '^@?\\w'],
+              ['^react', '^next', '^@?\\w'],
               // Absolute imports and Relative imports.
               [
                 '^(utils|services|hooks|hoc|types|contexts|dictionary|components)(/.*|$)',
@@ -59,10 +72,5 @@ module.exports = {
         ]
       }
     }
-  ],
-  env: {
-    browser: true,
-    es6: true,
-    node: true
-  }
+  ]
 }
