@@ -1,6 +1,6 @@
 {
   "name": "@viclafouch/eslint-config-viclafouch",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "ESLint and Prettier Config from Victor de la Fouchardiere",
   "main": "index.js",
   "keywords": [
@@ -38,10 +38,12 @@
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "standard-version": "9.3.2"
   },
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "release": "standard-version"
   }
 }
