@@ -30,6 +30,7 @@ module.exports = {
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
     'react/jsx-props-no-spreading': 0,
+    'arrow-body-style': ['error', 'always'],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' }
