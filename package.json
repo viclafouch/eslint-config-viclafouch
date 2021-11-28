@@ -15,6 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/viclafouch/eslint-config-viclafouch.git"
   },
+  "standard-version": {
+    "skip": {
+      "changelog": true
+    }
+  },
   "author": "Victor de la Fouchardiere <victor.delafouchardiere@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/viclafouch/eslint-config-viclafouch#readme",
