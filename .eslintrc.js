@@ -30,6 +30,7 @@ module.exports = {
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
     'react/jsx-props-no-spreading': 0,
+    'import/prefer-default-export': 0,
     'arrow-body-style': ['error', 'always'],
     'react/function-component-definition': [
       2,
@@ -52,7 +53,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.jsx', '*.js'],
+      files: ['*.jsx', '*.js', '*.ts', '*.tsx'],
       rules: {
         'simple-import-sort/imports': [
           'error',
@@ -60,7 +61,7 @@ module.exports = {
             groups: [
               // Packages. `react` related packages come first.
               // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-              ['^react', '^next', '^@?\\w'],
+              ['^react', '^next', '^@mui(/.*|$)', '^@?\\w'],
               // Absolute imports and Relative imports.
               [
                 '^(utils|services|hooks|hoc|types|contexts|dictionary|components)(/.*|$)',

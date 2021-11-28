@@ -6,8 +6,8 @@
   "keywords": [
     "javascript",
     "ecmascript",
+    "typescript",
     "eslint",
-    "lint",
     "config",
     "prettier"
   ],
@@ -26,27 +26,37 @@
   "peerDependencies": {
     "@babel/core": "7.16.0",
     "@babel/eslint-parser": "7.16.3",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
     "eslint": "8.3.0",
+    "eslint-config-airbnb": "19.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "typescript": "4.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
     "@babel/eslint-parser": "7.16.3",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
     "eslint": "8.3.0",
+    "eslint-config-airbnb": "19.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "prettier": "^2.5.0",
-    "standard-version": "9.3.2"
+    "standard-version": "9.3.2",
+    "typescript": "4.5.2"
   },
   "scripts": {
     "lint": "eslint .",
