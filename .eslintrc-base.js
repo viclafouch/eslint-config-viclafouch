@@ -11,6 +11,26 @@ module.exports = {
     }
   },
   rules: {
+    'id-length': [
+      'error',
+      { min: 2, max: Infinity, exceptions: ['t', '_'], properties: 'never' }
+    ],
+    'id-denylist': [
+      'error',
+      'err',
+      'cb',
+      'arr',
+      'acc',
+      'idx',
+      'ctx',
+      'res',
+      'val',
+      'obj',
+      'src',
+      'el',
+      'elem',
+      'req'
+    ],
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
     'react/jsx-props-no-spreading': 0,
