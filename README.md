@@ -74,7 +74,10 @@ You can add two scripts to your package.json to lint and/or fix your code:
 {
   "extends": [
     "@viclafouch/eslint-config-viclafouch/typescript"
-  ]
+  ],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  }
 }
 ```
 
