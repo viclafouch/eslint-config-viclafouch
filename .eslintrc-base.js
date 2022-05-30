@@ -15,6 +15,7 @@ module.exports = {
       'error',
       { min: 2, max: Infinity, exceptions: ['t', '_'], properties: 'never' }
     ],
+    'react/jsx-no-leaked-render': [2, { validStrategies: ['ternary'] }],
     'id-denylist': [
       'error',
       'err',
