@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['react', 'simple-import-sort'],
+  plugins: ['react', 'simple-import-sort', 'promise'],
   env: {
     browser: true,
     es6: true,
