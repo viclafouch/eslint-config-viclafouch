@@ -35,8 +35,34 @@ module.exports = {
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
     'react/jsx-props-no-spreading': 0,
+    'no-return-await': 2,
     'import/prefer-default-export': 0,
+    'react/jsx-boolean-value': 2,
+    'react/self-closing-comp': 2,
+    'react/hook-use-state': 2,
+    'react/default-props-match-prop-types': 2,
+    'react/no-unused-prop-types': 2,
+    'react/no-unused-prop-types': 2,
+    'promise/prefer-await-to-then': 2,
+    'require-await': 2,
+    'react/sort-prop-types': [
+      2,
+      {
+        requiredFirst: true,
+        callbacksLast: true,
+        sortShapeProp: true
+      }
+    ],
+    'curly': 2,
     'arrow-body-style': ['error', 'always'],
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector:
+          "JSXElement > JSXExpressionContainer > LogicalExpression[operator!='??']",
+        message: 'Please use ternary operator instead',
+      },
+    ],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' }
@@ -64,16 +90,30 @@ module.exports = {
           'error',
           {
             groups: [
-              // Packages. `react` related packages come first.
-              // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-              ['^react', '^next', '^@mui(/.*|$)', '^@?\\w'],
-              // Absolute imports and Relative imports.
               [
-                '^(utils|services|hooks|hoc|types|contexts|dictionary|components)(/.*|$)',
-                '^\\.'
-              ],
-              // for scss imports.
-              ['^[^.]']
+                // Anything that starts with react
+                // e.g: import { useState } from 'react'
+                // e.g: import { useFela } from 'react-fela'
+                '^react',
+                // Anything that starts with next
+                // e.g: import { useRouter } from 'next/router'
+                '^next',
+                // Anything that starts with a letter
+                // e.g: import Downshift from 'downshift'
+                '^[a-z]',
+                // Anything that starts with @
+                // e.g: import { yupResolver } from '@hookform/resolvers/yup'
+                '^@',
+                // Anything that starts with a dot
+                // e.g: import { matchIsDate } from './utils/date
+                '^\\.',
+                // Side effect imports from lib
+                // e.g: import 'react-toastify/dist/ReactToastify.css'
+                '^\\u0000',
+                // Side effect import that starts with a dot
+                // e.g: import './setup-config'
+                '^\\u0000\\.'
+              ]
             ]
           }
         ]
