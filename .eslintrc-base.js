@@ -53,19 +53,34 @@ module.exports = {
         sortShapeProp: true
       }
     ],
-    'curly': 2,
+    curly: 2,
     'arrow-body-style': ['error', 'always'],
     'no-restricted-syntax': [
       'error',
       {
         selector:
           "JSXElement > JSXExpressionContainer > LogicalExpression[operator!='??']",
-        message: 'Please use ternary operator instead',
-      },
+        message: 'Please use ternary operator instead'
+      }
     ],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' }
+    ],
+    // Prefer to have a convention for naming states
+    // e.g: [thing, setThing]
+    'react/hook-use-state': 2,
+
+    // Prevent the boolean true as prop value
+    // e.g: <MyComponent isValid /> instead of <MyComponent isValid={true} />
+    'react/jsx-boolean-value': 2,
+
+    // defaultProps is deprecated
+    'react/require-default-props': [
+      'error',
+      {
+        functions: 'defaultArguments'
+      }
     ],
     'prettier/prettier': [
       'error',
