@@ -1,8 +1,6 @@
-[![npm version](https://badge.fury.io/js/%40viclafouch%2Feslint-config-viclafouch.svg)](https://badge.fury.io/js/%40viclafouch%2Feslint-config-viclafouch)
-
 # Eslint / Prettier Setup of @viclafouch 📦
 
-These are my ESLint and Prettier settings for a React.js project ⚡️
+These are the ESLint and Prettier settings for a Next.js project ⚡️
 
 
 # Table of Contents
@@ -14,13 +12,19 @@ These are my ESLint and Prettier settings for a React.js project ⚡️
   - [If you use JavaScript](#if-you-use-javascript)
     - [Scripts](#scripts)
   - [If you use TypeScript](#if-you-use-typescript)
+    - [Extend your tsconfig](#extend-your-tsconfig)
+    - [Better typing](#better-typing)
     - [Scripts](#scripts-1)
-  - [With VS Code](#with-vs-code)
-  - [With Create React App](#with-create-react-app)
+  - [If you use Next.js](#if-you-use-nextjs)
+  - [If you use React.js](#if-you-use-reactjs)
+  - [If you want to use Prettier](#if-you-want-to-use-prettier)
+  - [If you use VS Code](#if-you-use-vs-code)
 
 ## What it does
 
-* Lints JavaScript based on the latest standards
+* Lints JavaScript / TypeScript based on the latest standards
+* Multiple configs `react` `hooks` `next`..
+* Shared `tsconfig.json`
 * Fixes issues and formatting errors with Prettier
 * Check for accessibility rules on JSX elements.
 
@@ -38,7 +42,7 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 
 4. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
 
-## If you use JavaScript
+5. Extends your config with the minimal base of Frichti config :
 
 ```json
 {
@@ -48,62 +52,144 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 }
 ```
 
-Then, you can remove these unnecessary packages (you don't need the TypeScript support)
+## If you use JavaScript
+
+You can remove these unnecessary packages (you don't need the TypeScript support)
 
 ```diff
-"devDependencies": {
-- "@typescript-eslint/eslint-plugin": "5.4.0",
-- "@typescript-eslint/parser": "5.4.0",
-- "typescript": "4.5.2"
-},
-```
-
-### Scripts
-
-You can add two scripts to your package.json to lint and/or fix your code:
-
-```json
-"scripts": {
-  "lint": "eslint .",
-  "lint:fix": "npm run lint -- --fix",
-},
-```
-## If you use TypeScript
-
-```json
 {
-  "extends": [
-    "@viclafouch/eslint-config-viclafouch/typescript"
-  ],
-  "parserOptions": {
-    "project": ["./tsconfig.json"]
+  "devDependencies": {
+- "@typescript-eslint/eslint-plugin": "xxx",
+- "@typescript-eslint/parser": "xxx",
+- "typescript": "xxx"
   }
 }
 ```
 
-Then, you can remove these unnecessary packages (you don't the Babel parser, we use `@typescript-eslint/parser`).
+### Scripts
+
+You can add two scripts to your package.json to lint and/or fix your code:
+
+```json
+{
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+  }
+}
+```
+## If you use TypeScript
+
+### Extend your tsconfig
+
+First, extend your current config file `tsconfig.json` with this following snippet:
+
+```json
+{
+  "extends": "@viclafouch/eslint-config-viclafouch/tsconfig.json",
+  ...
+}
+```
+
+Then, add the TypeScript Eslint rules to your `.eslintrc` file:
+
+```js
+{
+  extends: [
+    '@viclafouch/eslint-config-viclafouch',
+    '@viclafouch/eslint-config-viclafouch/typescript'
+  ],
+  parserOptions: {
+    project: true,
+    tsconfigRootDir: __dirname
+  },
+  root: true
+}
+```
+
+Then, you can remove these following unnecessary packages (you don't the Babel parser, we use `@typescript-eslint/parser`) instead.
 
 
 ```diff
-"devDependencies": {
-- "@babel/core": "7.16.0",
-- "@babel/eslint-parser": "7.16.3"
-...
-},
+{
+  "devDependencies": {
+- "@babel/core": "xxx",
+- "@babel/eslint-parser": "xxx"
+  ...
+  }
+}
 ```
+
+### Better typing
+
+TypeScript's built-in typings are not perfect. frichti-reset makes them better.
+
+1. Create a `reset.d.ts` file in your project with these contents:
+
+```ts
+// Do not add any other lines of code to this file!
+import '@viclafouch/eslint-config-viclafouch/reset.d'
+```
+
+2. Enjoy improved typings across your entire project.
 
 ### Scripts
 
 You can add two scripts to your package.json to lint and/or fix your code:
 
 ```json
-"scripts": {
-  "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx",
-  "lint:fix": "npm run lint -- --fix",
-},
+{
+  "scripts": {
+    "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "npm run lint -- --fix",
+  },
+}
 ```
 
-## With VS Code
+## If you use Next.js
+
+You can also add additional rules for Next.js. It includes the following configurations : `@viclafouch/eslint-config-viclafouch/react`, `@viclafouch/eslint-config-viclafouch/hooks` and Next.js specific rules.
+
+```js
+{
+  extends: [
+    '@viclafouch/eslint-config-viclafouch',
+    '@viclafouch/eslint-config-viclafouch/next'
+  ],
+}
+```
+
+## If you use React.js
+
+You can also add additional rules for only React.js ecosystem (without Next.js).
+
+```js
+{
+  extends: [
+    '@viclafouch/eslint-config-viclafouch',
+    '@viclafouch/eslint-config-viclafouch/react',
+    '@viclafouch/eslint-config-viclafouch/hooks'
+  ],
+}
+```
+
+
+## If you want to use Prettier
+
+Be sure to add the prettier config at the end of your `extends` array.
+
+```js
+{
+  extends: [
+    '@viclafouch/eslint-config-viclafouch',
+    '@viclafouch/eslint-config-viclafouch/react',
+    '@viclafouch/eslint-config-viclafouch/hooks',
+    '@viclafouch/eslint-config-viclafouch/prettier' // be sure to be the last
+  ],
+}
+```
+
+## If you use VS Code
 
 Once you have done. You probably want your editor to lint and fix for you.
 
@@ -117,9 +203,3 @@ Once you have done. You probably want your editor to lint and fix for you.
   }
 }
 ```
-
-## With Create React App
-
-1. You gotta eject first `npm run eject` or `yarn eject`
-1. Run `npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch`
-1. Crack open your `package.json` and replace `"extends": "react-app"` with `"extends": ["@viclafouch/eslint-config-viclafouch"]`
