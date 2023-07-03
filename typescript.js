@@ -3,5 +3,8 @@
  */
 module.exports = {
   extends: ['./rules/typescript.js'].map(require.resolve),
-  rules: {}
+  rules: {},
+  parserOptions: {
+    project: './tsconfig.json'
+  }
 }
