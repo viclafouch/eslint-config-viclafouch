@@ -159,7 +159,10 @@ If you want to sort your imports using your alias at the same time from your `js
 1. Import the `sortImports` function from the config in your `.eslintrc.js` file:
 
 ```js
-const { sortImports } = require('@viclafouch/eslint-config-viclafouch/rules/sort-imports')
+const {
+  sortImports
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+} = require('@viclafouch/eslint-config-viclafouch/rules/sort-imports')
 ```
 
 2. Include the function in your `overrides` array like this:
