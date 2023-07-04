@@ -12,9 +12,10 @@ These are the ESLint and Prettier settings for a Next.js project ⚡️
     - [Scripts](#scripts)
   - [If you use TypeScript](#if-you-use-typescript)
     - [Extend your tsconfig](#extend-your-tsconfig)
+    - [Add the typescript eslint config](#add-the-typescript-eslint-config)
     - [Better typing](#better-typing)
     - [Scripts](#scripts-1)
-    - [Better import sorting](#better-import-sorting)
+  - [Better import sorting](#better-import-sorting)
   - [If you use Next.js](#if-you-use-nextjs)
   - [If you use React.js](#if-you-use-reactjs)
   - [If you want to use Prettier](#if-you-want-to-use-prettier)
@@ -88,6 +89,8 @@ First, extend your current config file `tsconfig.json` with this following snipp
 }
 ```
 
+### Add the typescript eslint config
+
 Then, add the TypeScript Eslint rules to your `.eslintrc` file:
 
 ```js
@@ -149,7 +152,7 @@ You can add two scripts to your package.json to lint and/or fix your code:
 }
 ```
 
-### Better import sorting
+## Better import sorting
 
 If you want to sort your imports using your alias at the same time from your `jsonfig.json` or `tsconfig.json` file.
 
