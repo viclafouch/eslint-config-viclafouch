@@ -9,12 +9,12 @@ These are the ESLint and Prettier settings for a Next.js project ⚡️
 - [Table of Contents](#table-of-contents)
   - [What it does](#what-it-does)
   - [Local / Per Project Install](#local--per-project-install)
-  - [If you use JavaScript](#if-you-use-javascript)
     - [Scripts](#scripts)
   - [If you use TypeScript](#if-you-use-typescript)
     - [Extend your tsconfig](#extend-your-tsconfig)
     - [Better typing](#better-typing)
     - [Scripts](#scripts-1)
+    - [Better import sorting](#better-import-sorting)
   - [If you use Next.js](#if-you-use-nextjs)
   - [If you use React.js](#if-you-use-reactjs)
   - [If you want to use Prettier](#if-you-want-to-use-prettier)
@@ -32,17 +32,15 @@ These are the ESLint and Prettier settings for a Next.js project ⚡️
 
 1. If you don't already have a `package.json` file, create one with `npm init`.
 
-2. Then we need to install everything needed by the config:
+2. Then we need to install the config:
 
 ```
-npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
+npm i -D @viclafouch/eslint-config-viclafouch
 ```
 
-3. You can see in your package.json there are now a big list of devDependencies.
+1. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
 
-4. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
-
-5. Extends your config with the minimal base of Frichti config :
+2. Extends your config with the minimal base of @viclafouch config :
 
 ```json
 {
@@ -52,17 +50,16 @@ npx install-peerdeps --dev @viclafouch/eslint-config-viclafouch
 }
 ```
 
-## If you use JavaScript
+or js version for `.eslintrc.js` file:
 
-You can remove these unnecessary packages (you don't need the TypeScript support)
-
-```diff
-{
-  "devDependencies": {
-- "@typescript-eslint/eslint-plugin": "xxx",
-- "@typescript-eslint/parser": "xxx",
-- "typescript": "xxx"
-  }
+```js
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+module.exports = {
+  extends: [
+    "@viclafouch/eslint-config-viclafouch"
+  ]
 }
 ```
 
@@ -107,22 +104,28 @@ Then, add the TypeScript Eslint rules to your `.eslintrc` file:
 }
 ```
 
-Then, you can remove these following unnecessary packages (you don't the Babel parser, we use `@typescript-eslint/parser`) instead.
+or js version for `.eslintrc.js` file:
 
-
-```diff
-{
-  "devDependencies": {
-- "@babel/core": "xxx",
-- "@babel/eslint-parser": "xxx"
-  ...
-  }
+```js
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+module.exports = {
+  extends: [
+    '@viclafouch/eslint-config-viclafouch',
+    '@viclafouch/eslint-config-viclafouch/typescript'
+  ],
+  parserOptions: {
+    project: true,
+    tsconfigRootDir: __dirname
+  },
+  root: true
 }
 ```
 
 ### Better typing
 
-TypeScript's built-in typings are not perfect. frichti-reset makes them better.
+TypeScript's built-in typings are not perfect. viclafouch-reset makes them better.
 
 1. Create a `reset.d.ts` file in your project with these contents:
 
@@ -146,6 +149,24 @@ You can add two scripts to your package.json to lint and/or fix your code:
 }
 ```
 
+### Better import sorting
+
+If you want to sort your imports using your alias at the same time from your `jsonfig.json` or `tsconfig.json` file.
+
+1. Import the `sortImports` function from the config in your `.eslintrc.js` file:
+
+```js
+const { sortImports } = require('@viclafouch/eslint-config-viclafouch/rules/sort-imports')
+```
+
+2. Include the function in your `overrides` array like this:
+
+```js
+{
+  overrides: [sortImports(__dirname)]
+}
+```
+
 ## If you use Next.js
 
 You can also add additional rules for Next.js. It includes the following configurations : `@viclafouch/eslint-config-viclafouch/react`, `@viclafouch/eslint-config-viclafouch/hooks` and Next.js specific rules.
@@ -155,7 +176,7 @@ You can also add additional rules for Next.js. It includes the following configu
   extends: [
     '@viclafouch/eslint-config-viclafouch',
     '@viclafouch/eslint-config-viclafouch/next'
-  ],
+  ]
 }
 ```
 
@@ -169,7 +190,7 @@ You can also add additional rules for only React.js ecosystem (without Next.js).
     '@viclafouch/eslint-config-viclafouch',
     '@viclafouch/eslint-config-viclafouch/react',
     '@viclafouch/eslint-config-viclafouch/hooks'
-  ],
+  ]
 }
 ```
 
@@ -196,7 +217,7 @@ Once you have done. You probably want your editor to lint and fix for you.
 1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 2. Now we need to setup some VS Code settings. Create a `.vscode` folder at your root project, and create a `settings.json` file in this folder. Then, add this little config:
 
-```js
+```json
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true

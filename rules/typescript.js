@@ -112,6 +112,21 @@ module.exports = {
         selector: 'typeLike',
         format: ['PascalCase']
       }
+    ],
+
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        types: {
+          // Omit is not strict enought
+          Omit: {
+            // https://twitter.com/erikras/status/1673694889974833152
+            message:
+              'Use StrictOmit instead by using reset.d.ts from @viclafouch/eslint-config-viclafouch/reset.d. See https://github.com/viclafouch/eslint-config-viclafouch#better-typing',
+            fixWith: 'StrictOmit'
+          }
+        }
+      }
     ]
   },
   overrides: [
