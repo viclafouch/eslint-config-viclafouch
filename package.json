@@ -54,6 +54,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
+    "bump": "npm version minor",
+    "publish": "npm publish",
     "bump:beta": "npm version prerelease --preid beta",
     "publish:beta": "npm publish --tag beta"
   }
