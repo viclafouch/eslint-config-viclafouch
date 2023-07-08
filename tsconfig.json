@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "noUncheckedIndexedAccess": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
