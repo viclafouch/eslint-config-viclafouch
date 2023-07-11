@@ -14,87 +14,87 @@ module.exports = {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts']
     },
-    // Append 'ts' extensions to Frichti 'import/resolver' setting
+    // Append 'ts' extensions to @viclafouch/eslint 'import/resolver' setting
     // Original: ['.mjs', '.js', '.json']
     'import/resolver': {
       node: {
         extensions: ['.mjs', '.js', '.json', '.ts', '.d.ts']
       }
     },
-    // Append 'ts' extensions to Frichti 'import/extensions' setting
+    // Append 'ts' extensions to @viclafouch/eslint 'import/extensions' setting
     // Original: ['.js', '.mjs', '.jsx']
     'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
     // Resolve type definition packages
     'import/external-module-folders': ['node_modules', 'node_modules/@types']
   },
   rules: {
-    // Replace Frichti 'default-param-last' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'default-param-last' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/default-param-last.md
     'default-param-last': 'off',
     '@typescript-eslint/default-param-last':
       baseBestPracticesRules['default-param-last'],
 
-    // Replace Frichti 'dot-notation' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'dot-notation' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
     'dot-notation': 'off',
     '@typescript-eslint/dot-notation': baseBestPracticesRules['dot-notation'],
 
-    // Replace Frichti 'no-empty-function' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-empty-function' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function':
       baseBestPracticesRules['no-empty-function'],
 
-    // Replace Frichti 'no-extra-semi' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-extra-semi' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-semi.md
     'no-extra-semi': 'off',
     '@typescript-eslint/no-extra-semi': baseErrorsRules['no-extra-semi'],
 
-    // Replace Frichti 'no-redeclare' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-redeclare' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-redeclare.md
     'no-redeclare': 'off',
     '@typescript-eslint/no-redeclare': baseBestPracticesRules['no-redeclare'],
 
-    // Replace Frichti 'no-shadow' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-shadow' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': baseVariablesRules['no-shadow'],
 
-    // Replace Frichti 'no-throw-literal' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-throw-literal' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
     'no-throw-literal': 'off',
     '@typescript-eslint/no-throw-literal':
       baseBestPracticesRules['no-throw-literal'],
 
-    // Replace Frichti 'no-unused-expressions' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-unused-expressions' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-expressions':
       baseBestPracticesRules['no-unused-expressions'],
 
-    // Replace Frichti 'no-unused-vars' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-unused-vars' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': baseVariablesRules['no-unused-vars'],
 
-    // Replace Frichti 'no-use-before-define' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-use-before-define' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define':
       baseVariablesRules['no-use-before-define'],
 
-    // Replace Frichti 'no-useless-constructor' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-useless-constructor' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-useless-constructor.md
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor':
       baseES6Rules['no-useless-constructor'],
 
-    // Replace Frichti 'require-await' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'require-await' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-await.md
     'require-await': 'off',
     '@typescript-eslint/require-await': baseES6Rules['require-await'],
 
-    // Replace Frichti 'no-return-await' rule with '@typescript-eslint' version
+    // Replace @viclafouch/eslint 'no-return-await' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md
     'no-return-await': 'off',
     '@typescript-eslint/return-await': [
@@ -133,7 +133,7 @@ module.exports = {
     {
       files: ['*.ts?(x)'],
       rules: {
-        // The following rules are enabled in Frichti config, but are already checked (more thoroughly) by the TypeScript compiler
+        // The following rules are enabled in @viclafouch/eslint config, but are already checked (more thoroughly) by the TypeScript compiler
         // Some of the rules also fail in TypeScript files, for example: https://github.com/typescript-eslint/typescript-eslint/issues/662#issuecomment-507081586
         // Rules are inspired by: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended.ts
         'constructor-super': 'off',
@@ -154,7 +154,7 @@ module.exports = {
         'no-unreachable': 'off',
         'no-unsafe-negation': 'off',
         'valid-typeof': 'off',
-        // The following rules are enabled in Frichti config, but are recommended to be disabled within TypeScript projects
+        // The following rules are enabled in @viclafouch/eslint config, but are recommended to be disabled within TypeScript projects
         // See: https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
         'import/named': 'off',
         'import/no-named-as-default-member': 'off',
