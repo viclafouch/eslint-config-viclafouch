@@ -1,3 +1,26 @@
+const { getTsconfig } = require('get-tsconfig')
+const appRoot = require('app-root-path')
+
+function extractPaths(paths) {
+  return Object.keys(paths).map((key) => {
+    return key.split('/')[0]
+  })
+}
+
+const tsConfig = getTsconfig(appRoot.path, 'tsconfig.json')
+const jsConfig = getTsconfig(appRoot.path, 'jsconfig.json')
+
+let pathsNames = []
+
+if (tsConfig && tsConfig.config.compilerOptions.paths) {
+  pathsNames = extractPaths(tsConfig.config.compilerOptions.paths)
+} else if (jsConfig && jsConfig.config.compilerOptions.paths) {
+  pathsNames = extractPaths(jsConfig.config.compilerOptions.paths)
+}
+
+/**
+ * @type {import("eslint").Linter.Config}
+ */
 module.exports = {
   parserOptions: {
     sourceType: 'module'
@@ -26,6 +49,9 @@ module.exports = {
             // Anything that starts with a letter
             // e.g: import Downshift from 'downshift'
             '^[a-z]',
+            // Anything that starts with an alias (see jsconfig.json)
+            // e.g: import ListDropdown from '@shared/components/ListDropdown'
+            `^(${pathsNames.join('|')})(/.*|$)`,
             // Anything that starts with @
             // e.g: import { yupResolver } from '@hookform/resolvers/yup'
             '^@',

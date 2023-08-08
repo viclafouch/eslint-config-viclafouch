@@ -15,7 +15,7 @@ These are the ESLint and Prettier settings for a Next.js project ⚡️
     - [Add the typescript eslint config](#add-the-typescript-eslint-config)
     - [Better typing](#better-typing)
     - [Scripts](#scripts-1)
-  - [Better import sorting](#better-import-sorting)
+  - [If you want to enable imports sorting](#if-you-want-to-enable-imports-sorting)
   - [If you use Next.js](#if-you-use-nextjs)
   - [If you use React.js](#if-you-use-reactjs)
   - [If you want to use Prettier](#if-you-want-to-use-prettier)
@@ -152,24 +152,16 @@ You can add two scripts to your package.json to lint and/or fix your code:
 }
 ```
 
-## Better import sorting
+## If you want to enable imports sorting
 
 If you want to sort your imports using your alias at the same time from your `jsonfig.json` or `tsconfig.json` file.
 
-1. Import the `sortImports` function from the config in your `.eslintrc.js` file:
-
-```js
-const {
-  sortImports
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-} = require('@viclafouch/eslint-config-viclafouch/rules/sort-imports')
-```
-
-2. Include the function in your `overrides` array like this:
-
 ```js
 {
-  overrides: [sortImports(__dirname)]
+  extends: [
+    '@viclafouch/eslint-config-viclafouch',
+    '@viclafouch/eslint-config-viclafouch/imports'
+  ]
 }
 ```
 
@@ -209,6 +201,7 @@ Be sure to add the prettier config at the end of your `extends` array.
 {
   extends: [
     '@viclafouch/eslint-config-viclafouch',
+    '@viclafouch/eslint-config-viclafouch/imports',
     '@viclafouch/eslint-config-viclafouch/react',
     '@viclafouch/eslint-config-viclafouch/hooks',
     '@viclafouch/eslint-config-viclafouch/prettier' // be sure to be the last
