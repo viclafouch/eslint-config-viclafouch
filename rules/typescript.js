@@ -112,7 +112,11 @@ module.exports = {
         selector: 'typeLike',
         format: ['PascalCase']
       }
-    ]
+    ],
+
+    // Require consistently using T[] instead of Array<T>
+    // https://typescript-eslint.io/rules/array-type
+    '@typescript-eslint/array-type': 'error'
 
     // '@typescript-eslint/ban-types': [
     //   'error',
