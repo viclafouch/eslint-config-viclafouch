@@ -219,7 +219,7 @@ Once you have done. You probably want your editor to lint and fix for you.
 ```json
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": 'explicit'
   }
 }
 ```
