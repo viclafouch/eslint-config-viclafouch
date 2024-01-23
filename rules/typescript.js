@@ -135,6 +135,10 @@ module.exports = {
   },
   overrides: [
     {
+      extends: ['plugin:@typescript-eslint/disable-type-checked'],
+      files: ['./**/*.js']
+    },
+    {
       files: ['*.ts?(x)'],
       rules: {
         // The following rules are enabled in @viclafouch/eslint config, but are already checked (more thoroughly) by the TypeScript compiler
