@@ -199,13 +199,13 @@ Be sure to add the prettier config at the end of your `extends` array.
 
 ```js
 {
-  extends: [
-    '@viclafouch/eslint-config-viclafouch',
-    '@viclafouch/eslint-config-viclafouch/imports',
-    '@viclafouch/eslint-config-viclafouch/react',
-    '@viclafouch/eslint-config-viclafouch/hooks',
-    '@viclafouch/eslint-config-viclafouch/prettier' // be sure to be the last
-  ],
+  "extends": [
+    "@viclafouch/eslint-config-viclafouch",
+    "@viclafouch/eslint-config-viclafouch/imports",
+    "@viclafouch/eslint-config-viclafouch/react",
+    "@viclafouch/eslint-config-viclafouch/hooks",
+    "@viclafouch/eslint-config-viclafouch/prettier" // be sure to be the last
+  ]
 }
 ```
 
@@ -219,7 +219,7 @@ Once you have done. You probably want your editor to lint and fix for you.
 ```json
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   }
 }
 ```
