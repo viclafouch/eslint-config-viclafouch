@@ -114,6 +114,10 @@ module.exports = {
       }
     ],
 
+    // No useless template literals
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-useless-template-literals.md
+    '@typescript-eslint/no-useless-template-literals': 'error',
+
     // Require consistently using T[] instead of Array<T>
     // https://typescript-eslint.io/rules/array-type
     '@typescript-eslint/array-type': 'error'
