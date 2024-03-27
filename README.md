@@ -95,15 +95,10 @@ Then, add the TypeScript Eslint rules to your `.eslintrc` file:
 
 ```js
 {
-  extends: [
-    '@viclafouch/eslint-config-viclafouch',
-    '@viclafouch/eslint-config-viclafouch/typescript'
-  ],
-  parserOptions: {
-    project: true,
-    tsconfigRootDir: __dirname
-  },
-  root: true
+  "extends": [
+    "@viclafouch/eslint-config-viclafouch",
+    "@viclafouch/eslint-config-viclafouch/typescript"
+  ]
 }
 ```
 
@@ -158,9 +153,9 @@ If you want to sort your imports using your alias at the same time from your `js
 
 ```js
 {
-  extends: [
-    '@viclafouch/eslint-config-viclafouch',
-    '@viclafouch/eslint-config-viclafouch/imports'
+  "extends": [
+    "@viclafouch/eslint-config-viclafouch",
+    "@viclafouch/eslint-config-viclafouch/imports"
   ]
 }
 ```
@@ -171,9 +166,9 @@ You can also add additional rules for Next.js. It includes the following configu
 
 ```js
 {
-  extends: [
-    '@viclafouch/eslint-config-viclafouch',
-    '@viclafouch/eslint-config-viclafouch/next'
+  "extends": [
+    "@viclafouch/eslint-config-viclafouch",
+    "@viclafouch/eslint-config-viclafouch/next"
   ]
 }
 ```
@@ -184,10 +179,10 @@ You can also add additional rules for only React.js ecosystem (without Next.js).
 
 ```js
 {
-  extends: [
-    '@viclafouch/eslint-config-viclafouch',
-    '@viclafouch/eslint-config-viclafouch/react',
-    '@viclafouch/eslint-config-viclafouch/hooks'
+  "extends": [
+    "@viclafouch/eslint-config-viclafouch",
+    "@viclafouch/eslint-config-viclafouch/react",
+    "@viclafouch/eslint-config-viclafouch/hooks"
   ]
 }
 ```
