@@ -120,7 +120,27 @@ module.exports = {
 
     // Require consistently using T[] instead of Array<T>
     // https://typescript-eslint.io/rules/array-type
-    '@typescript-eslint/array-type': 'error'
+    '@typescript-eslint/array-type': 'error',
+
+    // Forbid delete array, use splice for example
+    // https://typescript-eslint.io/rules/no-array-delete/
+    '@typescript-eslint/no-array-delete': 'error',
+
+    // Don't do array.filter(callback)[0], use arrat.find instead
+    // https://typescript-eslint.io/rules/prefer-find
+    '@typescript-eslint/prefer-find': 'error',
+
+    // Prefer to use String.startsWith and String.endsWith
+    // https://typescript-eslint.io/rules/prefer-string-starts-ends-with
+    '@typescript-eslint/prefer-string-starts-ends-with': 'error',
+
+    // Prefer to use unknown instead of any for error in catch callback
+    // https://typescript-eslint.io/rules/use-unknown-in-catch-callback-variable
+    '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
+
+    // No more "as Record<any, any>" in Array.reduce initial value, use generics
+    // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
+    '@typescript-eslint/prefer-reduce-type-parameter': 'error'
 
     // '@typescript-eslint/ban-types': [
     //   'error',
