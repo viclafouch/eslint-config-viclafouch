@@ -365,7 +365,10 @@ module.exports = {
           'getSnapshotBeforeUpdate'
         ]
       }
-    ]
+    ],
+
+    // Don't require captions for video / audio
+    'jsx-a11y/media-has-caption': 'off'
   },
   overrides: [
     {
