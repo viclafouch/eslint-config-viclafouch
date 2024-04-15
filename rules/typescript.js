@@ -128,7 +128,7 @@ module.exports = {
 
     // Don't do array.filter(callback)[0], use arrat.find instead
     // https://typescript-eslint.io/rules/prefer-find
-    '@typescript-eslint/prefer-find': 'error',
+    // '@typescript-eslint/prefer-find': 'error',
 
     // Prefer to use String.startsWith and String.endsWith
     // https://typescript-eslint.io/rules/prefer-string-starts-ends-with
