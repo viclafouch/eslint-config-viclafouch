@@ -136,7 +136,7 @@ module.exports = {
 
     // Prefer to use unknown instead of any for error in catch callback
     // https://typescript-eslint.io/rules/use-unknown-in-catch-callback-variable
-    '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
+    // '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
 
     // No more "as Record<any, any>" in Array.reduce initial value, use generics
     // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
