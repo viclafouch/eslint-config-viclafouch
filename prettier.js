@@ -8,6 +8,7 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
+        plugins: ['prettier-plugin-curly'],
         semi: false,
         singleQuote: true,
         printWidth: 80,
