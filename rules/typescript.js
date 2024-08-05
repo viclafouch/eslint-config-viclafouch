@@ -132,10 +132,6 @@ module.exports = {
     // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
     '@typescript-eslint/prefer-reduce-type-parameter': 'error',
 
-    // Require Promise-like statements to be handled appropriately.
-    // https://typescript-eslint.io/rules/no-floating-promises
-    '@typescript-eslint/no-floating-promises': 'error',
-
     // Prefer using nullish coalescing (??) over logical (||) when possible.
     '@typescript-eslint/prefer-nullish-coalescing': 'error'
 
