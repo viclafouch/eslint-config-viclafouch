@@ -60,12 +60,6 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': baseVariablesRules['no-shadow'],
 
-    // Replace @viclafouch/eslint 'no-throw-literal' rule with '@typescript-eslint' version
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
-    'no-throw-literal': 'off',
-    '@typescript-eslint/no-throw-literal':
-      baseBestPracticesRules['no-throw-literal'],
-
     // Replace @viclafouch/eslint 'no-unused-expressions' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md
     'no-unused-expressions': 'off',
@@ -114,10 +108,6 @@ module.exports = {
       }
     ],
 
-    // No useless template literals
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-useless-template-literals.md
-    '@typescript-eslint/no-useless-template-literals': 'error',
-
     // Require consistently using T[] instead of Array<T>
     // https://typescript-eslint.io/rules/array-type
     '@typescript-eslint/array-type': 'error',
@@ -140,7 +130,14 @@ module.exports = {
 
     // No more "as Record<any, any>" in Array.reduce initial value, use generics
     // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
-    '@typescript-eslint/prefer-reduce-type-parameter': 'error'
+    '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+
+    // Require Promise-like statements to be handled appropriately.
+    // https://typescript-eslint.io/rules/no-floating-promises
+    '@typescript-eslint/no-floating-promises': 'error',
+
+    // Prefer using nullish coalescing (??) over logical (||) when possible.
+    '@typescript-eslint/prefer-nullish-coalescing': 'error'
 
     // '@typescript-eslint/ban-types': [
     //   'error',

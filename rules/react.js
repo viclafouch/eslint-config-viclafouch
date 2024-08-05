@@ -325,7 +325,7 @@ module.exports = {
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
     'react/function-component-definition': [
       'error',
-      { namedComponents: 'arrow-function' }
+      { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' }
     ],
 
     // Prevent react contexts from taking non-stable values
@@ -368,7 +368,11 @@ module.exports = {
     ],
 
     // Don't require captions for video / audio
-    'jsx-a11y/media-has-caption': 'off'
+    'jsx-a11y/media-has-caption': 'off',
+
+    // Disable spreading props in components more than once
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.35.0/docs/rules/jsx-props-no-spread-multi.md
+    'react/jsx-props-no-spread-multi': 'off'
   },
   overrides: [
     {
