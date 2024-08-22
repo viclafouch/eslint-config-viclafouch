@@ -118,7 +118,7 @@ module.exports = {
 
     // Don't do array.filter(callback)[0], use arrat.find instead
     // https://typescript-eslint.io/rules/prefer-find
-    // '@typescript-eslint/prefer-find': 'error',
+    '@typescript-eslint/prefer-find': 'error',
 
     // Prefer to use String.startsWith and String.endsWith
     // https://typescript-eslint.io/rules/prefer-string-starts-ends-with
@@ -130,10 +130,10 @@ module.exports = {
 
     // No more "as Record<any, any>" in Array.reduce initial value, use generics
     // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
-    '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+    '@typescript-eslint/prefer-reduce-type-parameter': 'error'
 
     // Prefer using nullish coalescing (??) over logical (||) when possible.
-    '@typescript-eslint/prefer-nullish-coalescing': 'error'
+    // '@typescript-eslint/prefer-nullish-coalescing': 'error'
 
     // '@typescript-eslint/ban-types': [
     //   'error',

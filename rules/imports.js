@@ -45,7 +45,7 @@ module.exports = {
             '^react',
             // Anything that starts with next
             // e.g: import { useRouter } from 'next/router'
-            '^next',
+            '^(next|@remix)',
             // Anything that starts with a letter
             // e.g: import Downshift from 'downshift'
             '^[a-z]',
