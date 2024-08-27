@@ -11,7 +11,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     // External bundlers should use preserve
-    "module": "preserve",
+    "module": "ESNext",
     // Make indexing stricter, not accessing unknown properties
     "noUncheckedIndexedAccess": true,
     "noPropertyAccessFromIndexSignature": false,
