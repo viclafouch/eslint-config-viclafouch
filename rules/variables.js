@@ -56,7 +56,8 @@ module.exports = {
       'obj',
       'el',
       'elem',
-      'req'
+      'req',
+      'str'
     ],
 
     // disallow declaration of variables that are not used in the code

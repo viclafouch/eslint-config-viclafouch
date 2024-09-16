@@ -309,7 +309,12 @@ module.exports = {
 
     // Disallow unnecessary fragments
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md
-    'react/jsx-no-useless-fragment': 'error',
+    'react/jsx-no-useless-fragment': [
+      'error',
+      {
+        allowExpressions: true
+      }
+    ],
 
     // This rule is turned off with the new JSX transform
     // since `eslint-plugin-react` is used.
