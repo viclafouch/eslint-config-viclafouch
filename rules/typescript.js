@@ -130,7 +130,15 @@ module.exports = {
 
     // No more "as Record<any, any>" in Array.reduce initial value, use generics
     // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
-    '@typescript-eslint/prefer-reduce-type-parameter': 'error'
+    '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+
+    // Disallow duplicate constituents of union or intersection types.
+    // https://typescript-eslint.io/rules/no-duplicate-type-constituents
+    '@typescript-eslint/no-duplicate-type-constituents': 'error',
+
+    // Disallow using code marked as @deprecated.
+    // https://typescript-eslint.io/rules/no-deprecated
+    '@typescript-eslint/no-deprecated': 'error'
 
     // Prefer using nullish coalescing (??) over logical (||) when possible.
     // '@typescript-eslint/prefer-nullish-coalescing': 'error'
