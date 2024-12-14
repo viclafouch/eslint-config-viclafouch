@@ -3,7 +3,7 @@
  */
 export default {
   name: 'variables',
-  files: ['**/*.{js,mjs,cjs,jsx}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
   rules: {
     // Enforce or disallow variable initializations at definition
     'init-declarations': 'off',

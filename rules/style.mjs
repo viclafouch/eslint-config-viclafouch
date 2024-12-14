@@ -3,7 +3,7 @@
  */
 export default {
   name: 'style',
-  files: ['**/*.{js,mjs,cjs,jsx}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
   rules: {
     // Enforce camelcase naming convention
     // https://eslint.org/docs/latest/rules/camelcase

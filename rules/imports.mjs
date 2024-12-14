@@ -25,7 +25,7 @@ if (tsConfig && tsConfig.config.compilerOptions.paths) {
  */
 export default {
   name: 'imports',
-  files: ['**/*.{js,mjs,cjs,jsx}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
   languageOptions: {
     sourceType: 'module'
   },

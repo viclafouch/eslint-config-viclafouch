@@ -5,7 +5,7 @@ import globals from 'globals'
  */
 export default {
   name: 'node',
-  files: ['**/*.{js,mjs,cjs,jsx}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
   languageOptions: {
     globals: {
       ...globals.node,

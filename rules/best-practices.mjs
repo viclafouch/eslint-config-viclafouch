@@ -5,7 +5,7 @@ import globals from 'globals'
  */
 export default {
   name: 'best-practices',
-  files: ['**/*.{js,mjs,cjs,jsx}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
   languageOptions: {
     globals: {
       ...globals.browser

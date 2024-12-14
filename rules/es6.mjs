@@ -5,7 +5,7 @@ import pluginPromise from 'eslint-plugin-promise'
  */
 export default {
   name: 'es6',
-  files: ['**/*.{js,mjs,cjs,jsx}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
   plugins: {
     promise: pluginPromise
   },

@@ -3,7 +3,7 @@
  */
 export default {
   name: 'errors',
-  files: ['**/*.{js,mjs,cjs,jsx}'],
+  files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
   rules: {
     // Disallow await inside of loops
     // https://eslint.org/docs/rules/no-await-in-loop
