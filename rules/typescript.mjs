@@ -89,9 +89,6 @@ export default tseslint.config(
       '@typescript-eslint/no-useless-constructor':
         baseES6Rules['no-useless-constructor'],
 
-      // Replace @viclafouch/eslint 'require-await' rule with '@typescript-eslint' version
-      // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-await.md
-      'require-await': 'off',
       '@typescript-eslint/require-await': baseES6Rules['require-await'],
 
       // Replace @viclafouch/eslint 'no-return-await' rule with '@typescript-eslint' version
@@ -152,13 +149,13 @@ export default tseslint.config(
       // '@typescript-eslint/ban-types': [
       //   'error',
       //   {
-      //     types: {
+      //     Types: {
       //       // Omit is not strict enought
       //       Omit: {
       //         // https://twitter.com/erikras/status/1673694889974833152
-      //         message:
+      //         Message:
       //           'Use StrictOmit instead by using reset.d.ts from @viclafouch/eslint-config-viclafouch/reset.d. See https://github.com/viclafouch/eslint-config-viclafouch#better-typing',
-      //         fixWith: 'StrictOmit'
+      //         FixWith: 'StrictOmit'
       //       }
       //     }
       //   }
@@ -176,23 +173,32 @@ export default tseslint.config(
       // Some of the rules also fail in TypeScript files, for example: https://github.com/typescript-eslint/typescript-eslint/issues/662#issuecomment-507081586
       // Rules are inspired by: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended.ts
       'constructor-super': 'off',
-      'getter-return': 'off',
       'no-const-assign': 'off',
+      // https://eslint.org/docs/latest/rules/no-dupe-args#handled_by_typescript
       'no-dupe-args': 'off',
+      // https://eslint.org/docs/latest/rules/no-dupe-class-members#handled_by_typescript
       'no-dupe-class-members': 'off',
+      // https://eslint.org/docs/latest/rules/no-dupe-keys#handled_by_typescript
       'no-dupe-keys': 'off',
+      // https://eslint.org/docs/latest/rules/no-func-assign#handled_by_typescript
       'no-func-assign': 'off',
+      // https://eslint.org/docs/latest/rules/no-import-assign#handled_by_typescript
       'no-import-assign': 'off',
+      // https://eslint.org/docs/latest/rules/no-new-native-nonconstructor#handled_by_typescript
+      'no-new-native-nonconstructor': 'off',
       'no-new-symbol': 'off',
       'no-obj-calls': 'off',
       'no-redeclare': 'off',
+      // https://eslint.org/docs/latest/rules/no-setter-return#handled_by_typescript
       'no-setter-return': 'off',
+      // https://eslint.org/docs/latest/rules/no-this-before-super#handled_by_typescript
       'no-this-before-super': 'off',
-      // https://github.com/typescript-eslint/typescript-eslint/blob/1cf9243/docs/getting-started/linting/FAQ.md#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+      // https://eslint.org/docs/latest/rules/no-undef#handled_by_typescript
       'no-undef': 'off',
+      // https://eslint.org/docs/latest/rules/no-unreachable#handled_by_typescript
       'no-unreachable': 'off',
+      // https://eslint.org/docs/latest/rules/no-unsafe-negation#handled_by_typescript
       'no-unsafe-negation': 'off',
-      'valid-typeof': 'off',
       // The following rules are enabled in @viclafouch/eslint config, but are recommended to be disabled within TypeScript projects
       // See: https://github.com/typescript-eslint/typescript-eslint/blob/13583e65f5973da2a7ae8384493c5e00014db51b/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
       'import/named': 'off',

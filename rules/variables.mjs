@@ -5,20 +5,21 @@ export default {
   name: 'variables',
   files: ['**/*.{js,mjs,cjs,jsx}'],
   rules: {
-    // enforce or disallow variable initializations at definition
+    // Enforce or disallow variable initializations at definition
     'init-declarations': 'off',
 
-    // disallow the catch clause parameter name being the same as a variable in the outer scope
+    // Disallow the catch clause parameter name being the same as a variable in the outer scope
     'no-catch-shadow': 'off',
 
-    // disallow deletion of variables
+    // Disallow deletion of variables
+    // https://eslint.org/docs/latest/rules/no-delete-var
     'no-delete-var': 'error',
 
-    // disallow labels that share a name with a variable
+    // Disallow labels that share a name with a variable
     // https://eslint.org/docs/rules/no-label-var
     'no-label-var': 'error',
 
-    // disallow declaration of variables already declared in the outer scope
+    // Disallow declaration of variables already declared in the outer scope
     'no-shadow': 'error',
 
     // For code readability, prevent creating unclear naming
@@ -35,13 +36,13 @@ export default {
     // Ref: https://eslint.org/docs/rules/object-shorthand
     'object-shorthand': [2, 'properties'],
 
-    // disallow shadowing of names such as arguments
+    // Disallow shadowing of names such as arguments
     'no-shadow-restricted-names': 'error',
 
-    // disallow use of undeclared variables unless mentioned in a /*global */ block
-    'no-undef': 'error',
+    // Disallow use of undeclared variables unless mentioned in a /*global */ block
+    'no-undef': ['error', { typeof: true }],
 
-    // disallow use of undefined when initializing variables
+    // Disallow use of undefined when initializing variables
     'no-undef-init': 'error',
 
     // Most common naming that is not always understandable
@@ -62,7 +63,7 @@ export default {
       'str'
     ],
 
-    // disallow declaration of variables that are not used in the code
+    // Disallow declaration of variables that are not used in the code
     'no-unused-vars': [
       'error',
       {
@@ -74,7 +75,7 @@ export default {
       }
     ],
 
-    // disallow use of variables before they are defined
+    // Disallow use of variables before they are defined
     'no-use-before-define': [
       'error',
       { functions: true, classes: true, variables: true }

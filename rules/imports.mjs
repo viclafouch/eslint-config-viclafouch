@@ -24,7 +24,7 @@ if (tsConfig && tsConfig.config.compilerOptions.paths) {
  * @type {import("eslint").Linter.Config}
  */
 export default {
-  name : 'imports',
+  name: 'imports',
   files: ['**/*.{js,mjs,cjs,jsx}'],
   languageOptions: {
     sourceType: 'module'
@@ -44,29 +44,29 @@ export default {
         groups: [
           [
             // Anything that starts with react
-            // e.g: import { useState } from 'react'
-            // e.g: import { useFela } from 'react-fela'
+            // E.g: import { useState } from 'react'
+            // E.g: import { useFela } from 'react-fela'
             '^react',
             // Anything that starts with next
-            // e.g: import { useRouter } from 'next/router'
+            // E.g: import { useRouter } from 'next/router'
             '^(next|@remix)',
             // Anything that starts with a letter
-            // e.g: import Downshift from 'downshift'
+            // E.g: import Downshift from 'downshift'
             '^[a-z]',
             // Anything that starts with an alias (see jsconfig.json)
-            // e.g: import ListDropdown from '@shared/components/ListDropdown'
+            // E.g: import ListDropdown from '@shared/components/ListDropdown'
             `^(${pathsNames.join('|')})(/.*|$)`,
             // Anything that starts with @
-            // e.g: import { yupResolver } from '@hookform/resolvers/yup'
+            // E.g: import { yupResolver } from '@hookform/resolvers/yup'
             '^@',
             // Anything that starts with a dot
-            // e.g: import { matchIsDate } from './utils/date
+            // E.g: import { matchIsDate } from './utils/date
             '^\\.',
             // Side effect imports from lib
-            // e.g: import 'react-toastify/dist/ReactToastify.css'
+            // E.g: import 'react-toastify/dist/ReactToastify.css'
             '^\\u0000',
             // Side effect import that starts with a dot
-            // e.g: import './setup-config'
+            // E.g: import './setup-config'
             '^\\u0000\\.'
           ]
         ]

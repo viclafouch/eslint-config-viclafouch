@@ -9,32 +9,38 @@ export default {
     // https://eslint.org/docs/rules/no-await-in-loop
     'no-await-in-loop': 'error',
 
-    // disallow assignment in conditional expressions
+    // Disallow assignment in conditional expressions
+    // https://eslint.org/docs/latest/rules/no-cond-assign
     'no-cond-assign': ['error', 'always'],
 
-    // disallow use of console
+    // Disallow use of console
     'no-console': 'warn',
 
-    // disallow use of constant expressions in conditions
-    'no-constant-condition': 'warn',
+    // Disallow use of constant expressions in conditions
+    // https://eslint.org/docs/latest/rules/no-constant-condition
+    'no-constant-condition': 'error',
 
-    // disallow use of debugger
+    // Disallow use of debugger
+    // https://eslint.org/docs/latest/rules/no-debugger
     'no-debugger': 'error',
 
     // Disallow duplicate conditions in if-else-if chains
     // https://eslint.org/docs/rules/no-dupe-else-if
     'no-dupe-else-if': 'error',
 
-    // disallow a duplicate case label.
+    // Disallow duplicate case labels
+    // https://eslint.org/docs/latest/rules/no-duplicate-case
     'no-duplicate-case': 'error',
 
-    // disallow duplicate keys when creating object literals
+    // Disallow duplicate keys when creating object literals
+    // https://eslint.org/docs/latest/rules/no-dupe-keys
     'no-dupe-keys': 'error',
 
-    // disallow assigning to the exception in a catch block
+    // Disallow reassigning exceptions in catch clauses
+    // https://eslint.org/docs/latest/rules/no-ex-assign
     'no-ex-assign': 'error',
 
-    // disallow unnecessary semicolons
+    // Disallow unnecessary semicolons
     'no-extra-semi': 'error'
   }
 }

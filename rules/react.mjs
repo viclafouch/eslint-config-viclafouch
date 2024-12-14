@@ -38,7 +38,7 @@ export default [
       // Forbid the use of Proptypes
       'react/prop-types': 'off',
 
-      // defaultProps is deprecated
+      // DefaultProps is deprecated
       'react/require-default-props': [
         'error',
         {
@@ -196,15 +196,15 @@ export default [
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/ac102885765be5ff37847a871f239c6703e1c7cc/docs/rules/jsx-no-target-blank.md
       'react/jsx-no-target-blank': ['error', { enforceDynamicLinks: 'always' }],
 
-      // only .jsx files may have JSX
+      // Only .jsx files may have JSX
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
       'react/jsx-filename-extension': ['error', { extensions: ['.jsx'] }],
 
-      // prevent accidental JS comments from being injected into JSX as text
+      // Prevent accidental JS comments from being injected into JSX as text
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md
       'react/jsx-no-comment-textnodes': 'error',
 
-      // disallow using React.render/ReactDOM.render's return value
+      // Disallow using React.render/ReactDOM.render's return value
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-render-return-value.md
       'react/no-render-return-value': 'error',
 
@@ -331,12 +331,12 @@ export default [
       ],
 
       // This rule is turned off with the new JSX transform
-      // since `eslint-plugin-react` is used.
+      // Since `eslint-plugin-react` is used.
       // Ref: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#how-to-upgrade-to-the-new-jsx-transform
       'react/jsx-uses-react': 'off',
 
       // This rule is turned off with the new JSX transform
-      // since `eslint-plugin-react` is used.
+      // Since `eslint-plugin-react` is used.
       // Ref: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#how-to-upgrade-to-the-new-jsx-transform
       'react/react-in-jsx-scope': 'off',
 

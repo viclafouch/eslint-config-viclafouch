@@ -6,7 +6,7 @@ import globals from 'globals'
  * @type {import("eslint").Linter.Config}
  */
 export default {
-  name : 'react-hooks',
+  name: 'react-hooks',
   plugins: {
     'react-hooks': pluginReactHooks
   },
@@ -26,7 +26,7 @@ export default {
     'react-hooks/exhaustive-deps': 'error',
 
     // Prefer to have a convention for naming states
-    // e.g: [thing, setThing]
+    // E.g: [thing, setThing]
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/hook-use-state.md
     'react/hook-use-state': 'error'
   }
