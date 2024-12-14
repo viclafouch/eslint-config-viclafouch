@@ -1,13 +1,14 @@
+import pluginPromise from 'eslint-plugin-promise'
+
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
-  plugins: ['promise'],
-  env: {
-    es6: true
+export default {
+  plugins: {
+    promise: pluginPromise
   },
-  parserOptions: {
-    ecmaVersion: 6,
+  languageOptions: {
+    ecmaVersion: 2022,
     sourceType: 'module'
   },
   rules: {

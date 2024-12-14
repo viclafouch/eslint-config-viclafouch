@@ -1,5 +1,7 @@
-const { getTsconfig } = require('get-tsconfig')
-const appRoot = require('app-root-path')
+import appRoot from 'app-root-path'
+import importPlugin from 'eslint-plugin-import'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import { getTsconfig } from 'get-tsconfig'
 
 function extractPaths(paths) {
   return Object.keys(paths).map((key) => {
@@ -21,14 +23,14 @@ if (tsConfig && tsConfig.config.compilerOptions.paths) {
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
-  parserOptions: {
+export default {
+  languageOptions: {
     sourceType: 'module'
   },
-  env: {
-    es6: true
+  plugins: {
+    'simple-import-sort': simpleImportSort,
+    import: importPlugin
   },
-  plugins: ['simple-import-sort', 'import'],
   rules: {
     'simple-import-sort/exports': 'error',
     'import/first': 'error',

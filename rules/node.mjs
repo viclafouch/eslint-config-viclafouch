@@ -1,10 +1,14 @@
+import globals from 'globals'
+
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
-  env: {
-    node: true,
-    jest: true
+export default {
+  languageOptions: {
+    globals: {
+      ...globals.node,
+      ...globals.jest
+    }
   },
   rules: {
     // require all requires be top-level

@@ -24,21 +24,20 @@
   "license": "MIT",
   "homepage": "https://github.com/viclafouch/eslint-config-viclafouch#readme",
   "peerDependencies": {
-    "eslint": "^8.57.0",
-    "prettier": "^3.3.0",
-    "typescript": "^5.5.0"
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
     "@babel/eslint-parser": "^7.25.9",
-    "@next/eslint-plugin-next": "^15.0.4",
+    "@next/eslint-plugin-next": "^15.1.0",
     "@rushstack/eslint-patch": "^1.10.4",
     "@total-typescript/ts-reset": "^0.6.1",
-    "@typescript-eslint/eslint-plugin": "^8.17.0",
-    "@typescript-eslint/parser": "^8.17.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
     "app-root-path": "^3.1.0",
     "babel-loader": "^9.2.1",
-    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -49,9 +48,11 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-testing-library": "^7.1.1",
     "get-tsconfig": "^4.8.1",
+    "globals": "^15.13.0",
     "prettier": "^3.4.2",
-    "typescript": "^5.7.2",
-    "prettier-plugin-curly": "^0.3.1"
+    "prettier-plugin-curly": "^0.3.1",
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "lint": "eslint .",
@@ -60,5 +61,11 @@
     "publish": "npm publish",
     "bump:beta": "npm version prerelease --preid beta",
     "publish:beta": "npm publish --tag beta"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
   }
 }

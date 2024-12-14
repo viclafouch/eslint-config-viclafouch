@@ -1,7 +1,7 @@
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
+export default {
   rules: {
     // enforce or disallow variable initializations at definition
     'init-declarations': 'off',

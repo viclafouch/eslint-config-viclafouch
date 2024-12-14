@@ -1,9 +1,13 @@
+import globals from 'globals'
+
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
-  env: {
-    browser: true
+export default {
+  languageOptions: {
+    globals: {
+      ...globals.browser
+    }
   },
   rules: {
     // enforces getter/setter pairs in objects

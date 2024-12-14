@@ -1,7 +1,7 @@
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
+export default {
   rules: {
     'lines-between-class-members': ['error', 'always'],
     'padding-line-between-statements': [

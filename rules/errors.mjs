@@ -1,7 +1,7 @@
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
+export default {
   rules: {
     // Disallow await inside of loops
     // https://eslint.org/docs/rules/no-await-in-loop

@@ -1,11 +1,18 @@
+import pluginReact from 'eslint-plugin-react'
+import pluginReactHooks from 'eslint-plugin-react-hooks'
+import globals from 'globals'
+
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
-  plugins: ['react-hooks'],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
+export default {
+  plugins: {
+    'react-hooks': pluginReactHooks
+  },
+  languageOptions: {
+    ...pluginReact.configs.flat.recommended.languageOptions,
+    globals: {
+      ...globals.serviceworker
     }
   },
   rules: {
