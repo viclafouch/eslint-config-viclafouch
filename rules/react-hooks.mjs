@@ -6,6 +6,7 @@ import globals from 'globals'
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  name : 'react-hooks',
   plugins: {
     'react-hooks': pluginReactHooks
   },

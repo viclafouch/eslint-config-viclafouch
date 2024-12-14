@@ -2,6 +2,7 @@
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  name: 'errors',
   files: ['**/*.{js,mjs,cjs,jsx}'],
   rules: {
     // Disallow await inside of loops

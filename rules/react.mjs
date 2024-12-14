@@ -9,6 +9,7 @@ import globals from 'globals'
 export default [
   jsxA11y.flatConfigs.recommended,
   {
+    name: 'react',
     plugins: {
       react: pluginReact
     },

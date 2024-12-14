@@ -24,6 +24,7 @@ if (tsConfig && tsConfig.config.compilerOptions.paths) {
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  name : 'imports',
   files: ['**/*.{js,mjs,cjs,jsx}'],
   languageOptions: {
     sourceType: 'module'

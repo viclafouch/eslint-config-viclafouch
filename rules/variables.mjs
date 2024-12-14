@@ -2,6 +2,7 @@
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  name: 'variables',
   files: ['**/*.{js,mjs,cjs,jsx}'],
   rules: {
     // enforce or disallow variable initializations at definition

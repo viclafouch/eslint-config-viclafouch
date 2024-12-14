@@ -4,6 +4,7 @@ import globals from 'globals'
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  name: 'best-practices',
   files: ['**/*.{js,mjs,cjs,jsx}'],
   languageOptions: {
     globals: {

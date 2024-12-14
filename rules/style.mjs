@@ -2,6 +2,7 @@
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  name: 'style',
   files: ['**/*.{js,mjs,cjs,jsx}'],
   rules: {
     'lines-between-class-members': ['error', 'always'],

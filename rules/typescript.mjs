@@ -13,6 +13,7 @@ const { rules: baseES6Rules } = es6Config
 export default tseslint.config(
   tseslint.configs.recommended,
   {
+    name: 'typescript',
     languageOptions: {
       parserOptions: {
         projectService: true,
