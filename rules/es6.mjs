@@ -4,10 +4,16 @@ import pluginPromise from 'eslint-plugin-promise'
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  files: ['**/*.{js,mjs,cjs,jsx}'],
   plugins: {
     promise: pluginPromise
   },
   languageOptions: {
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true
+      }
+    },
     ecmaVersion: 2022,
     sourceType: 'module'
   },

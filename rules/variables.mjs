@@ -2,6 +2,7 @@
  * @type {import("eslint").Linter.Config}
  */
 export default {
+  files: ['**/*.{js,mjs,cjs,jsx}'],
   rules: {
     // enforce or disallow variable initializations at definition
     'init-declarations': 'off',
@@ -63,7 +64,13 @@ export default {
     // disallow declaration of variables that are not used in the code
     'no-unused-vars': [
       'error',
-      { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
+      {
+        vars: 'all',
+        args: 'after-used',
+        caughtErrors: 'none',
+        argsIgnorePattern: '^_',
+        ignoreRestSiblings: true
+      }
     ],
 
     // disallow use of variables before they are defined
