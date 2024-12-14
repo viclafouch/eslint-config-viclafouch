@@ -9,10 +9,6 @@ export default {
     // https://eslint.org/docs/latest/rules/camelcase
     camelcase: 'error',
 
-    // Enforce a maximum number of lines per file
-    // https://eslint.org/docs/rules/max-lines
-    'max-lines': ['error', 350],
-
     // Enforce or disallow capitalization of the first letter of a comment
     // https://eslint.org/docs/rules/capitalized-comments
     'capitalized-comments': ['error', 'always'],

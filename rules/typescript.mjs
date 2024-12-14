@@ -16,8 +16,9 @@ export default tseslint.config(
     name: 'typescript',
     languageOptions: {
       parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname
+        projectService: {
+          allowDefaultProject: ['*.js', '*.mjs']
+        }
       }
     },
     settings: {

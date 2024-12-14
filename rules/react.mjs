@@ -400,7 +400,7 @@ export default [
   },
   {
     // JSX in .tsx files instead of .jsx
-    files: ['*.ts?(x)'],
+    files: ['**/*.{ts,tsx}'],
     rules: {
       'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }]
     }
