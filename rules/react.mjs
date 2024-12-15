@@ -41,7 +41,7 @@ export default [
 
       // DefaultProps is deprecated
       'react/require-default-props': [
-        'error',
+        'off',
         {
           functions: 'defaultArguments'
         }
