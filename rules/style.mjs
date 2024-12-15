@@ -9,10 +9,6 @@ export default {
     // https://eslint.org/docs/latest/rules/camelcase
     camelcase: 'error',
 
-    // Enforce or disallow capitalization of the first letter of a comment
-    // https://eslint.org/docs/rules/capitalized-comments
-    'capitalized-comments': ['error', 'always'],
-
     // "red" === color is a "Yoda" condition, prefer color === "red" instead
     // https://eslint.org/docs/latest/rules/yoda
     yoda: 'error',
