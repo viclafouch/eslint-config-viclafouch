@@ -1,6 +1,6 @@
 {
   "name": "@viclafouch/eslint-config-viclafouch",
-  "version": "4.17.1-beta.6",
+  "version": "4.17.1-beta.7",
   "description": "ESLint and Prettier Config from Victor de la Fouchardiere",
   "main": "index.js",
   "keywords": [
