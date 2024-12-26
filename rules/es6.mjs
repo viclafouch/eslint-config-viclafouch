@@ -78,8 +78,10 @@ export default {
       'error',
       {
         restrictedNamedExports: [
-          'default', // Use `export default` to provide a default export
-          'then' // This will cause tons of confusion when your module is dynamically `import()`ed, and will break in most node ESM versions
+          // Use `export default` to provide a default export
+          'default',
+          // This will cause tons of confusion when your module is dynamically `import()`ed, and will break in most node ESM versions
+          'then'
         ]
       }
     ],

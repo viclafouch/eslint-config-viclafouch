@@ -1,12 +1,17 @@
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
 
 /**
  * @type {import("eslint").Linter.Config}
  */
 export default [
-  eslintPluginPrettierRecommended,
   {
+    plugins: {
+      ...eslintConfigPrettier.plugins,
+      prettier: eslintPluginPrettier
+    },
     rules: {
+      ...eslintConfigPrettier.rules,
       'prettier/prettier': [
         'error',
         {
@@ -18,6 +23,7 @@ export default [
           jsxSingleQuote: false,
           trailingComma: 'none',
           endOfLine: 'auto',
+          usePrettierrc: false,
           bracketSameLine: false,
           arrowParens: 'always'
         }
