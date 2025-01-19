@@ -142,7 +142,11 @@ export default tseslint.config(
 
       // Disallow using code marked as @deprecated.
       // https://typescript-eslint.io/rules/no-deprecated
-      '@typescript-eslint/no-deprecated': 'error'
+      '@typescript-eslint/no-deprecated': 'error',
+
+      // Disallow using the spread operator when it might cause unexpected behavior.
+      // https://typescript-eslint.io/rules/no-misused-spread/
+      '@typescript-eslint/no-misused-spread': 'error'
 
       // Prefer using nullish coalescing (??) over logical (||) when possible.
       // '@typescript-eslint/prefer-nullish-coalescing': 'error'
