@@ -18,6 +18,6 @@ export default {
     'global-require': 'error',
 
     // Enforce usage of the `node:` prefix for builtin imports
-    'node/prefer-node-protocol': 'error'
+    'unicorn/prefer-node-protocol': 'error'
   }
 }

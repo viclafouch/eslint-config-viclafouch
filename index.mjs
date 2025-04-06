@@ -1,3 +1,5 @@
+import eslintPluginUnicorn from 'eslint-plugin-unicorn'
+import globals from 'globals'
 import bestPracticesConfig from './rules/best-practices.mjs'
 import errorConfig from './rules/errors.mjs'
 import es6Config from './rules/es6.mjs'
@@ -14,6 +16,14 @@ export default [
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     linterOptions: {
       reportUnusedDisableDirectives: 'error'
+    }
+  },
+  {
+    languageOptions: {
+      globals: globals.builtin
+    },
+    plugins: {
+      unicorn: eslintPluginUnicorn
     }
   },
   bestPracticesConfig,
