@@ -107,8 +107,14 @@ export default tseslint.config(
       '@typescript-eslint/naming-convention': [
         'error',
         {
-          selector: 'typeLike',
-          format: ['PascalCase']
+          selector: 'typeParameter',
+          format: ['PascalCase'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+          custom: {
+            regex: '^(T|T[A-Z][A-Za-z]+)$',
+            match: true
+          }
         }
       ],
 
@@ -146,7 +152,29 @@ export default tseslint.config(
 
       // Disallow using the spread operator when it might cause unexpected behavior.
       // https://typescript-eslint.io/rules/no-misused-spread/
-      '@typescript-eslint/no-misused-spread': 'error'
+      '@typescript-eslint/no-misused-spread': 'error',
+
+      // Enforce import type { T }
+      // https://typescript-eslint.io/rules/consistent-type-imports
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports' }
+      ],
+
+      // Don't over-define types for simple things like strings
+      // https://typescript-eslint.io/rules/no-inferrable-types
+      '@typescript-eslint/no-inferrable-types': [
+        'error',
+        { ignoreParameters: true }
+      ],
+
+      // Disallow TypeScript namespaces
+      // https://typescript-eslint.io/rules/no-namespace
+      '@typescript-eslint/no-namespace': 'error',
+
+      // Disallow non-null assertions after an optional chain expression
+      // https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'error'
 
       // Prefer using nullish coalescing (??) over logical (||) when possible.
       // '@typescript-eslint/prefer-nullish-coalescing': 'error'

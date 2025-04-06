@@ -9,12 +9,15 @@ export default {
   languageOptions: {
     globals: {
       ...globals.node,
-      ...globals.jest
+      ...globals.vitest
     }
   },
   rules: {
     // Require all requires be top-level
     // https://eslint.org/docs/rules/global-require
-    'global-require': 'error'
+    'global-require': 'error',
+
+    // Enforce usage of the `node:` prefix for builtin imports
+    'node/prefer-node-protocol': 'error'
   }
 }
