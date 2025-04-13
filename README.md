@@ -39,29 +39,22 @@ These are the ESLint and Prettier settings for a Next.js project ⚡️
 npm i -D @viclafouch/eslint-config-viclafouch
 ```
 
-1. Create a `.eslintrc` file in the root of your project's directory (it should live where package.json does). Your `.eslintrc` file should look like this:
+1. Create a `eslintrc.config.mjs` file in the root of your project's directory (it should live where package.json does). Your `eslintrc.config.mjs` file should look like this:
 
 2. Extends your config with the minimal base of @viclafouch config :
 
-```json
-{
-  "extends": [
-    "@viclafouch/eslint-config-viclafouch"
-  ]
-}
-```
-
-or js version for `.eslintrc.js` file:
-
 ```js
+import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
+
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
-  extends: [
-    "@viclafouch/eslint-config-viclafouch"
-  ]
-}
+export default [
+  ...baseConfig,
+  {
+    ignores: ['**/node_modules/**']
+  }
+]
 ```
 
 ### Scripts
@@ -71,7 +64,7 @@ You can add two scripts to your package.json to lint and/or fix your code:
 ```json
 {
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint",
     "lint:fix": "npm run lint -- --fix",
   }
 }
@@ -94,31 +87,19 @@ First, extend your current config file `tsconfig.json` with this following snipp
 Then, add the TypeScript Eslint rules to your `.eslintrc` file:
 
 ```js
-{
-  "extends": [
-    "@viclafouch/eslint-config-viclafouch",
-    "@viclafouch/eslint-config-viclafouch/typescript"
-  ]
-}
-```
+import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
+import typescriptConfig from '@viclafouch/eslint-config-viclafouch/typescript.mjs'
 
-or js version for `.eslintrc.js` file:
-
-```js
 /**
  * @type {import("eslint").Linter.Config}
  */
-module.exports = {
-  extends: [
-    '@viclafouch/eslint-config-viclafouch',
-    '@viclafouch/eslint-config-viclafouch/typescript'
-  ],
-  parserOptions: {
-    project: true,
-    tsconfigRootDir: __dirname
-  },
-  root: true
-}
+export default [
+  ...baseConfig,
+  ...typescriptConfig,
+  {
+    ignores: ['**/node_modules/**']
+  }
+]
 ```
 
 ### Better typing
@@ -141,7 +122,7 @@ You can add two scripts to your package.json to lint and/or fix your code:
 ```json
 {
   "scripts": {
-    "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "tsc --noEmit && eslint",
     "lint:fix": "npm run lint -- --fix",
   },
 }
@@ -152,25 +133,39 @@ You can add two scripts to your package.json to lint and/or fix your code:
 If you want to sort your imports using your alias at the same time from your `jsonfig.json` or `tsconfig.json` file.
 
 ```js
-{
-  "extends": [
-    "@viclafouch/eslint-config-viclafouch",
-    "@viclafouch/eslint-config-viclafouch/imports"
-  ]
-}
+import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
+import importsConfig from '@viclafouch/eslint-config-viclafouch/imports.mjs'
+
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+export default [
+  ...baseConfig,
+  ...importsConfig,
+  {
+    ignores: ['**/node_modules/**']
+  }
+]
 ```
 
 ## If you use Next.js
 
-You can also add additional rules for Next.js. It includes the following configurations : `@viclafouch/eslint-config-viclafouch/react`, `@viclafouch/eslint-config-viclafouch/hooks` and Next.js specific rules.
+You can also add additional rules for Next.js. It includes the following configurations : `@viclafouch/eslint-config-viclafouch/react.mjs`, `@viclafouch/eslint-config-viclafouch/hooks.mjs` and Next.js specific rules.
 
 ```js
-{
-  "extends": [
-    "@viclafouch/eslint-config-viclafouch",
-    "@viclafouch/eslint-config-viclafouch/next"
-  ]
-}
+import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
+import nextConfig from '@viclafouch/eslint-config-viclafouch/next.mjs'
+
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+export default [
+  ...baseConfig,
+  ...nextConfig,
+  {
+    ignores: ['**/node_modules/**', '**/dist/**', '**/.next/**']
+  }
+]
 ```
 
 ## If you use React.js
@@ -178,30 +173,50 @@ You can also add additional rules for Next.js. It includes the following configu
 You can also add additional rules for only React.js ecosystem (without Next.js).
 
 ```js
-{
-  "extends": [
-    "@viclafouch/eslint-config-viclafouch",
-    "@viclafouch/eslint-config-viclafouch/react",
-    "@viclafouch/eslint-config-viclafouch/hooks"
-  ]
-}
+import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
+import hooksConfig from '@viclafouch/eslint-config-viclafouch/hooks.mjs'
+import reactConfig from '@viclafouch/eslint-config-viclafouch/react.mjs'
+
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+export default [
+  ...baseConfig,
+  ...hooksConfig,
+  ...reactConfig
+  {
+    ignores: ['**/node_modules/**']
+  }
+]
 ```
 
 
 ## If you want to use Prettier
 
-Be sure to add the prettier config at the end of your `extends` array.
+Be sure for the prettier config to be the last one.
 
 ```js
-{
-  "extends": [
-    "@viclafouch/eslint-config-viclafouch",
-    "@viclafouch/eslint-config-viclafouch/imports",
-    "@viclafouch/eslint-config-viclafouch/react",
-    "@viclafouch/eslint-config-viclafouch/hooks",
-    "@viclafouch/eslint-config-viclafouch/prettier" // be sure to be the last
-  ]
-}
+import hooksConfig from '@viclafouch/eslint-config-viclafouch/hooks.mjs'
+import importsConfig from '@viclafouch/eslint-config-viclafouch/imports.mjs'
+import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
+import prettierConfig from '@viclafouch/eslint-config-viclafouch/prettier.mjs'
+import reactConfig from '@viclafouch/eslint-config-viclafouch/react.mjs'
+import typescriptConfig from '@viclafouch/eslint-config-viclafouch/typescript.mjs'
+
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+export default [
+  ...baseConfig,
+  ...reactConfig,
+  ...hooksConfig,
+  ...importsConfig,
+  ...typescriptConfig,
+  ...prettierConfig,
+  {
+    ignores: ['**/node_modules/**', '**/dist/**']
+  }
+]
 ```
 
 ## If you use VS Code
