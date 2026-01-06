@@ -18,13 +18,14 @@ These are the ESLint and Prettier settings for a Next.js project ⚡️
   - [If you want to enable imports sorting](#if-you-want-to-enable-imports-sorting)
   - [If you use Next.js](#if-you-use-nextjs)
   - [If you use React.js](#if-you-use-reactjs)
+  - [If you use Tailwind CSS v4](#if-you-use-tailwind-css-v4)
   - [If you want to use Prettier](#if-you-want-to-use-prettier)
   - [If you use VS Code](#if-you-use-vs-code)
 
 ## What it does
 
 * Lints JavaScript / TypeScript based on the latest standards
-* Multiple configs `react` `hooks` `next`..
+* Multiple configs `react` `hooks` `next` `tailwindcss`..
 * Shared `tsconfig.json`
 * Fixes issues and formatting errors with Prettier
 * Check for accessibility rules on JSX elements.
@@ -195,6 +196,26 @@ export default [
 ]
 ```
 
+## If you use Tailwind CSS v4
+
+You can add linting rules for Tailwind CSS v4 using `eslint-plugin-better-tailwindcss`. You need to provide the path to your CSS entry file via the `entryPoint` option.
+
+```js
+import { baseConfig, betterTailwindcssConfig } from '@viclafouch/eslint-config-viclafouch'
+
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+export default [
+  ...baseConfig,
+  ...betterTailwindcssConfig({
+    entryPoint: 'src/global.css'
+  }),
+  {
+    ignores: ['**/node_modules/**']
+  }
+]
+```
 
 ## If you want to use Prettier
 
