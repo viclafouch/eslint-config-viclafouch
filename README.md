@@ -39,12 +39,22 @@ These are the ESLint and Prettier settings for a Next.js project ⚡️
 npm i -D @viclafouch/eslint-config-viclafouch
 ```
 
-1. Create a `eslintrc.config.mjs` file in the root of your project's directory (it should live where package.json does). Your `eslintrc.config.mjs` file should look like this:
+3. Make sure your `package.json` has `"type": "module"`:
 
-2. Extends your config with the minimal base of @viclafouch config :
+```json
+{
+  "name": "your-project",
+  "type": "module",
+  ...
+}
+```
+
+4. Create a `eslint.config.js` file in the root of your project's directory (it should live where package.json does).
+
+5. Extends your config with the minimal base of @viclafouch config :
 
 ```js
-import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
+import { baseConfig } from '@viclafouch/eslint-config-viclafouch'
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -87,8 +97,7 @@ First, extend your current config file `tsconfig.json` with this following snipp
 Then, add the TypeScript Eslint rules to your `.eslintrc` file:
 
 ```js
-import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
-import typescriptConfig from '@viclafouch/eslint-config-viclafouch/typescript.mjs'
+import { baseConfig, typescriptConfig } from '@viclafouch/eslint-config-viclafouch'
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -133,8 +142,7 @@ You can add two scripts to your package.json to lint and/or fix your code:
 If you want to sort your imports using your alias at the same time from your `jsonfig.json` or `tsconfig.json` file.
 
 ```js
-import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
-import importsConfig from '@viclafouch/eslint-config-viclafouch/imports.mjs'
+import { baseConfig, importsConfig } from '@viclafouch/eslint-config-viclafouch'
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -150,11 +158,10 @@ export default [
 
 ## If you use Next.js
 
-You can also add additional rules for Next.js. It includes the following configurations : `@viclafouch/eslint-config-viclafouch/react.mjs`, `@viclafouch/eslint-config-viclafouch/hooks.mjs` and Next.js specific rules.
+You can also add additional rules for Next.js. It includes the following configurations : `reactConfig`, `hooksConfig` and Next.js specific rules.
 
 ```js
-import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
-import nextConfig from '@viclafouch/eslint-config-viclafouch/next.mjs'
+import { baseConfig, nextConfig } from '@viclafouch/eslint-config-viclafouch'
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -173,9 +180,7 @@ export default [
 You can also add additional rules for only React.js ecosystem (without Next.js).
 
 ```js
-import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
-import hooksConfig from '@viclafouch/eslint-config-viclafouch/hooks.mjs'
-import reactConfig from '@viclafouch/eslint-config-viclafouch/react.mjs'
+import { baseConfig, hooksConfig, reactConfig } from '@viclafouch/eslint-config-viclafouch'
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -183,7 +188,7 @@ import reactConfig from '@viclafouch/eslint-config-viclafouch/react.mjs'
 export default [
   ...baseConfig,
   ...hooksConfig,
-  ...reactConfig
+  ...reactConfig,
   {
     ignores: ['**/node_modules/**']
   }
@@ -196,12 +201,14 @@ export default [
 Be sure for the prettier config to be the last one.
 
 ```js
-import hooksConfig from '@viclafouch/eslint-config-viclafouch/hooks.mjs'
-import importsConfig from '@viclafouch/eslint-config-viclafouch/imports.mjs'
-import baseConfig from '@viclafouch/eslint-config-viclafouch/index.mjs'
-import prettierConfig from '@viclafouch/eslint-config-viclafouch/prettier.mjs'
-import reactConfig from '@viclafouch/eslint-config-viclafouch/react.mjs'
-import typescriptConfig from '@viclafouch/eslint-config-viclafouch/typescript.mjs'
+import {
+  baseConfig,
+  hooksConfig,
+  importsConfig,
+  prettierConfig,
+  reactConfig,
+  typescriptConfig
+} from '@viclafouch/eslint-config-viclafouch'
 
 /**
  * @type {import("eslint").Linter.Config}

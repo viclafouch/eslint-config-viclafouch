@@ -2,7 +2,15 @@
   "name": "@viclafouch/eslint-config-viclafouch",
   "version": "4.22.0",
   "description": "ESLint and Prettier Config from Victor de la Fouchardiere",
-  "main": "index.js",
+  "type": "module",
+  "main": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs"
+    }
+  },
   "keywords": [
     "javascript",
     "ecmascript",

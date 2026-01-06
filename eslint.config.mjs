@@ -1,5 +1,4 @@
-import baseConfig from './index.mjs'
-import prettierConfig from './prettier.mjs'
+import { baseConfig, prettierConfig } from './index.mjs'
 
 /**
  * @type {import("eslint").Linter.Config}
