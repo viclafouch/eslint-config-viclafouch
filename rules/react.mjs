@@ -365,7 +365,7 @@ export default [
 
       // Enforce sandbox attribute on iframe elements
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/c8833f301314dab3e79ef7ac4cf863e4d5fa0019/docs/rules/iframe-missing-sandbox.md
-      'react/iframe-missing-sandbox': 'error',
+      'react/iframe-missing-sandbox': 'off',
 
       // Prevent problematic leaked values from being rendered
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/c42b624d0fb9ad647583a775ab9751091eec066f/docs/rules/jsx-no-leaked-render.md
