@@ -997,9 +997,16 @@ export default defineConfig(
       ],
 
       // Naming convention for type parameters
+      // Enforce naming conventions for variables, functions, types, and type parameters
       // https://typescript-eslint.io/rules/naming-convention
       '@typescript-eslint/naming-convention': [
         'error',
+        {
+          selector: 'variable',
+          format: ['camelCase', 'PascalCase', 'UPPER_CASE']
+        },
+        { selector: 'function', format: ['camelCase', 'PascalCase'] },
+        { selector: 'typeLike', format: ['PascalCase'] },
         {
           selector: 'typeParameter',
           format: ['PascalCase'],
