@@ -1,5 +1,4 @@
 import {
-  betterTailwindcssConfig,
   importsConfig,
   prettierConfig,
   reactConfig,
@@ -21,6 +20,5 @@ export default [
   ...typescriptConfig,
   ...reactConfig,
   ...importsConfig,
-  ...betterTailwindcssConfig({ entryPoint: 'src/styles.css' }),
   ...prettierConfig
 ]

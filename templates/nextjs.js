@@ -1,5 +1,4 @@
 import {
-  betterTailwindcssConfig,
   importsConfig,
   nextConfig,
   prettierConfig,
@@ -14,6 +13,5 @@ export default [
   ...typescriptConfig,
   ...nextConfig,
   ...importsConfig,
-  ...betterTailwindcssConfig({ entryPoint: 'src/app/globals.css' }),
   ...prettierConfig
 ]
