@@ -762,6 +762,15 @@ export default defineConfig(
       // ==========================================
 
       // Disallow creating a variable and immediately mutating it
+      // Enforce kebab-case for filenames
+      // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md
+      'unicorn/filename-case': [
+        'error',
+        {
+          case: 'kebabCase'
+        }
+      ],
+
       // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-immediate-mutation.md
       'unicorn/no-immediate-mutation': 'error',
 
