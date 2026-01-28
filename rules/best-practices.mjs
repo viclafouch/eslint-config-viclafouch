@@ -388,6 +388,130 @@ export default {
 
     // Enforce the use of u flag on RegExp
     // https://eslint.org/docs/rules/require-unicode-regexp
-    'require-unicode-regexp': 'off'
+    'require-unicode-regexp': 'off',
+
+    // Disallow creating a variable and immediately mutating it
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-immediate-mutation.md
+    'unicorn/no-immediate-mutation': 'error',
+
+    // Disallow useless arguments when constructing Set, Map, WeakSet, WeakMap
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-collection-argument.md
+    'unicorn/no-useless-collection-argument': 'error',
+
+    // Prefer class fields over constructor assignments
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-class-fields.md
+    'unicorn/prefer-class-fields': 'error',
+
+    // Prefer Array#toReversed() over Array#reverse() to avoid mutation
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-reverse.md
+    'unicorn/no-array-reverse': 'error',
+
+    // Require using new when throwing an error
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md
+    'unicorn/throw-new-error': 'error',
+
+    // Prefer includes() over indexOf() when checking for existence
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-includes.md
+    'unicorn/prefer-includes': 'error',
+
+    // Prefer find() over filter()[0] when searching for a single element
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md
+    'unicorn/prefer-array-find': 'error',
+
+    // Prefer startsWith() and endsWith() over regex or slice comparisons
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md
+    'unicorn/prefer-string-starts-ends-with': 'error',
+
+    // Prefer .at() for accessing elements by negative index
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md
+    'unicorn/prefer-at': 'error',
+
+    // Prefer Number static properties over global ones
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md
+    'unicorn/prefer-number-properties': 'error',
+
+    // Prefer for...of over Array#forEach
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md
+    'unicorn/no-array-for-each': 'error',
+
+    // Prefer Array#flat() over legacy techniques to flatten arrays
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md
+    'unicorn/prefer-array-flat': 'error',
+
+    // Prefer flatMap() over map().flat()
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md
+    'unicorn/prefer-array-flat-map': 'error',
+
+    // Disallow useless undefined
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md
+    'unicorn/no-useless-undefined': 'error',
+
+    // Prefer String#replaceAll() over regex with global flag
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md
+    'unicorn/prefer-string-replace-all': 'error',
+
+    // Prefer String#trimStart() / String#trimEnd() over trimLeft() / trimRight()
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-trim-start-end.md
+    'unicorn/prefer-string-trim-start-end': 'error',
+
+    // Disallow if statements as the only statement in else blocks
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-lonely-if.md
+    'unicorn/no-lonely-if': 'error',
+
+    // Prefer RegExp#test() over String#match() for boolean checks
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md
+    'unicorn/prefer-regexp-test': 'error',
+
+    // Prefer modern DOM APIs
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-dom-apis.md
+    'unicorn/prefer-modern-dom-apis': 'error',
+
+    // Prefer [...iterable] over Array.from(iterable)
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md
+    'unicorn/prefer-spread': 'off',
+
+    // Prefer omitting catch binding when unused
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md
+    'unicorn/prefer-optional-catch-binding': 'off',
+
+    // Disallow negated conditions when alternative exists
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md
+    'unicorn/no-negated-condition': 'off',
+
+    // Prefer TypeError for type-related errors
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md
+    'unicorn/prefer-type-error': 'off',
+
+    // Prefer Date.now() over new Date().getTime()
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md
+    'unicorn/prefer-date-now': 'error',
+
+    // Prefer === undefined over typeof === 'undefined'
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-typeof-undefined.md
+    'unicorn/no-typeof-undefined': 'error',
+
+    // Prefer Object.fromEntries() over reduce to create objects
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md
+    'unicorn/prefer-object-from-entries': 'error',
+
+    // Prefer Set#has() over Array#includes() for frequent checks
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md
+    'unicorn/prefer-set-has': 'off',
+
+    // Prefer some() over find() !== undefined for boolean checks
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md
+    'unicorn/prefer-array-some': 'error',
+
+    // Disallow new Array() and prefer Array.from({length: n})
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-array.md
+    'unicorn/no-new-array': 'error',
+
+    // Prefer default parameters over reassignment
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md
+    'unicorn/prefer-default-parameters': 'error',
+
+    // Prefer negative index over length minus index
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-negative-index.md
+    'unicorn/prefer-negative-index': 'error'
   }
 }

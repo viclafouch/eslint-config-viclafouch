@@ -123,3 +123,43 @@ To use it, reference it in your project's tsconfig.json or include it in your ty
 - Prettier >= 3
 - TypeScript >= 5
 
+## Coding Conventions
+
+### Rule Severity
+
+**IMPORTANT**: This project follows a strict binary approach for rule severity:
+- Use `'error'` for rules that should be enforced
+- Use `'off'` for rules that should be disabled
+- **NEVER use `'warn'`** - warnings are not acceptable in this configuration
+
+This ensures that linting is either passing or failing, with no ambiguous middle ground.
+
+### Rule Comment Format
+
+**IMPORTANT**: Every rule must be documented with a comment following this exact format:
+
+```javascript
+// Description of what the rule does
+// https://eslint.org/docs/rules/rule-name
+'rule-name': 'error',
+```
+
+For TypeScript rules, use the appropriate documentation URL:
+
+```javascript
+// Description of what the rule does
+// https://typescript-eslint.io/rules/rule-name
+'@typescript-eslint/rule-name': 'error',
+```
+
+**Format requirements:**
+1. **Line 1**: A description of what the rule enforces/disallows (starts with a verb like "Enforce", "Disallow", "Require", etc.)
+2. **Line 2**: The URL to the rule's official documentation
+3. **Line 3+**: The rule configuration itself
+
+**URL patterns by plugin:**
+- ESLint core: `https://eslint.org/docs/rules/rule-name` or `https://eslint.org/docs/latest/rules/rule-name`
+- TypeScript ESLint: `https://typescript-eslint.io/rules/rule-name`
+- React: `https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/rule-name.md`
+- React Hooks: `https://react.dev/reference/rules/rules-of-hooks`
+

@@ -18,6 +18,7 @@ export default {
     'global-require': 'error',
 
     // Enforce usage of the `node:` prefix for builtin imports
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md
     'unicorn/prefer-node-protocol': 'error'
   }
 }

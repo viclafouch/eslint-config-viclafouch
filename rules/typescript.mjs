@@ -174,7 +174,15 @@ export default tseslint.config(
 
       // Disallow non-null assertions after an optional chain expression
       // https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain
-      '@typescript-eslint/no-non-null-asserted-optional-chain': 'error'
+      '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
+
+      // Disallow default values that will never be used (type guarantees non-undefined)
+      // https://typescript-eslint.io/rules/no-useless-default-assignment
+      '@typescript-eslint/no-useless-default-assignment': 'error',
+
+      // Disallow passing a value-returning function where void is expected
+      // https://typescript-eslint.io/rules/strict-void-return
+      '@typescript-eslint/strict-void-return': 'error'
 
       // Prefer using nullish coalescing (??) over logical (||) when possible.
       // '@typescript-eslint/prefer-nullish-coalescing': 'error'

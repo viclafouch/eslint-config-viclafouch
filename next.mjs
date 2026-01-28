@@ -1,10 +1,6 @@
-import { FlatCompat } from '@eslint/eslintrc'
+import nextPlugin from '@next/eslint-plugin-next'
 import hooksConfig from './hooks.mjs'
 import reactConfig from './react.mjs'
-
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname
-})
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -12,15 +8,11 @@ const compat = new FlatCompat({
 export default [
   ...reactConfig,
   ...hooksConfig,
-  ...compat.config({
-    extends: ['plugin:@next/next/recommended'],
-    rules: {
-      'react/no-unescaped-entities': 'off',
-      '@next/next/no-page-custom-font': 'off'
-    }
-  }),
+  nextPlugin.configs.recommended,
   {
     rules: {
+      'react/no-unescaped-entities': 'off',
+      '@next/next/no-page-custom-font': 'off',
       // No error for anchor inside a Next Link
       'jsx-a11y/anchor-is-valid': [
         'error',
