@@ -113,7 +113,7 @@ export default defineConfig(
       // https://eslint.org/docs/latest/rules/max-lines-per-function
       'max-lines-per-function': [
         'error',
-        { max: 100, skipBlankLines: true, skipComments: true }
+        { max: 250, skipBlankLines: true, skipComments: true }
       ],
 
       // Enforce that class methods use "this"

@@ -401,7 +401,7 @@ export default [
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.35.0/docs/rules/jsx-props-no-spread-multi.md
       'react/jsx-props-no-spread-multi': 'off',
 
-      // Disallow destructured imports from React and ReactDOM - use React.useState, React.useEffect, etc.
+      // Disallow destructured imports from React and ReactDOM - use React.useState, React.useEffect, React.ReactNode, etc.
       // Disallow useMemo and useCallback unless proven performance problem
       // https://eslint.org/docs/latest/rules/no-restricted-syntax
       'no-restricted-syntax': [
@@ -409,7 +409,7 @@ export default [
         {
           selector: 'ImportDeclaration[source.value="react"] ImportSpecifier',
           message:
-            'Use React.useState, React.useEffect, etc. instead of destructuring React imports.'
+            'Use React.useState, React.ReactNode, etc. instead of destructuring React imports.'
         },
         {
           selector:
