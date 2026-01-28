@@ -5,7 +5,7 @@ ESLint and Prettier configuration for modern TypeScript projects.
 ## Installation
 
 ```bash
-npm i -D @viclafouch/eslint-config-viclafouch
+npm i -D @viclafouch/eslint-config-viclafouch eslint prettier typescript
 ```
 
 ## Quick Init (recommended)

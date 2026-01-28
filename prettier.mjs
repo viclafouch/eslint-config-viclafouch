@@ -1,5 +1,9 @@
+import { createRequire } from 'node:module'
+
 import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
+
+const require = createRequire(import.meta.url)
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -15,7 +19,7 @@ export default [
       'prettier/prettier': [
         'error',
         {
-          plugins: ['prettier-plugin-curly'],
+          plugins: [require.resolve('prettier-plugin-curly')],
           semi: false,
           singleQuote: true,
           printWidth: 80,
