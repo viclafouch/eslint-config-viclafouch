@@ -10,8 +10,8 @@ const filename = fileURLToPath(import.meta.url)
 const directory = dirname(filename)
 
 const TEMPLATES = {
-  1: { name: 'React + Tailwind', file: 'react.js' },
-  2: { name: 'Next.js + Tailwind', file: 'nextjs.js' },
+  1: { name: 'React', file: 'react.js' },
+  2: { name: 'Next.js', file: 'nextjs.js' },
   3: { name: 'Pure TypeScript', file: 'typescript.js' }
 }
 

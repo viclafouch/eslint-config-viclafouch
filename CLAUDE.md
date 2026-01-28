@@ -10,7 +10,6 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 - TypeScript-first configuration (all projects are TypeScript by default)
 - ES6+, JSX/TSX support
 - React.js and Next.js frameworks
-- Tailwind CSS v4 linting
 - Promise handling and best practices
 - Unicorn plugin for modern JavaScript
 
@@ -34,7 +33,6 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | `hooks.mjs` | React Hooks rules (rules-of-hooks, exhaustive-deps, useState naming) |
 | `imports.mjs` | Import sorting with simple-import-sort in priority groups |
 | `prettier.mjs` | Prettier integration via eslint-plugin-prettier |
-| `better-tailwindcss.mjs` | Tailwind CSS v4 linting (function accepting `{ entryPoint }`) |
 
 ### Rules Directory
 
@@ -44,6 +42,15 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | `rules/imports.mjs` | Import sorting rules with alias detection from tsconfig/jsconfig |
 | `rules/react.mjs` | React-specific rules |
 | `rules/react-hooks.mjs` | React Hooks rules |
+
+### CLI
+
+| File | Description |
+|------|-------------|
+| `bin/init.js` | CLI script for initializing eslint.config.js |
+| `templates/react.js` | Template for React projects |
+| `templates/nextjs.js` | Template for Next.js projects |
+| `templates/typescript.js` | Template for pure TypeScript projects |
 
 ### Utility Files for Other Projects
 
@@ -70,18 +77,18 @@ npm run publish:beta  # Publish beta version
 Each module exports an array of configurations that can be spread:
 
 ```javascript
-// Typical Next.js setup
+// Typical React setup
 import {
   typescriptConfig,
-  nextConfig,
+  reactConfig,
   importsConfig,
   prettierConfig
 } from '@viclafouch/eslint-config-viclafouch'
 
 export default [
-  { ignores: ['**/node_modules/**', '**/.next/**'] },
+  { ignores: ['**/node_modules/**'] },
   ...typescriptConfig,
-  ...nextConfig,
+  ...reactConfig,
   ...importsConfig,
   ...prettierConfig
 ]
@@ -93,8 +100,7 @@ export default [
 2. **nextConfig** → Next.js rules (includes React + Hooks + a11y)
 3. **reactConfig** + **hooksConfig** → For React without Next.js
 4. **importsConfig** → Import sorting
-5. **betterTailwindcssConfig({ entryPoint })** → Tailwind CSS v4
-6. **prettierConfig** → Formatting (must be last)
+5. **prettierConfig** → Formatting (must be last)
 
 ## Integrated Plugins
 
@@ -106,7 +112,6 @@ export default [
 - `eslint-plugin-promise` - Promise handling
 - `eslint-plugin-unicorn` - Best practices
 - `eslint-plugin-prettier` - Code formatting
-- `eslint-plugin-better-tailwindcss` - Tailwind v4
 - `@next/eslint-plugin-next` - Next.js specific
 
 ## Peer Dependencies

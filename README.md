@@ -16,12 +16,11 @@ npx @viclafouch/eslint-config-viclafouch
 
 This will prompt you to select your stack and create the `eslint.config.js` file automatically.
 
-## Manual Setup (React + Tailwind)
+## Manual Setup (React)
 
 ```js
 // eslint.config.js
 import {
-  betterTailwindcssConfig,
   importsConfig,
   prettierConfig,
   reactConfig,
@@ -48,7 +47,7 @@ export default [
 
 ## Stack Examples
 
-### React + Vite (without Tailwind)
+### React + Vite
 
 ```js
 // eslint.config.js
@@ -99,7 +98,6 @@ export default [
 ```js
 // eslint.config.js
 import {
-  betterTailwindcssConfig,
   importsConfig,
   nextConfig,
   prettierConfig,
@@ -114,7 +112,6 @@ export default [
   ...typescriptConfig,
   ...nextConfig,
   ...importsConfig,
-  ...betterTailwindcssConfig({ entryPoint: 'src/app/globals.css' }),
   ...prettierConfig
 ]
 ```
@@ -128,7 +125,6 @@ export default [
 | `hooksConfig` | React Hooks |
 | `nextConfig` | Next.js (includes React + Hooks + a11y) |
 | `importsConfig` | Automatic import sorting |
-| `betterTailwindcssConfig({ entryPoint })` | Tailwind CSS v4 |
 | `prettierConfig` | Prettier (always last) |
 
 ## TypeScript
@@ -186,5 +182,4 @@ import '@viclafouch/eslint-config-viclafouch/reset.d'
 2. `typescriptConfig` (base)
 3. `reactConfig` / `nextConfig` / `hooksConfig`
 4. `importsConfig`
-5. `betterTailwindcssConfig`
-6. `prettierConfig` (always last)
+5. `prettierConfig` (always last)

@@ -1,4 +1,3 @@
-export { default as betterTailwindcssConfig } from './better-tailwindcss.mjs'
 export { default as hooksConfig } from './hooks.mjs'
 export { default as importsConfig } from './imports.mjs'
 export { default as nextConfig } from './next.mjs'
