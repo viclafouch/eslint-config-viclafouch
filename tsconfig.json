@@ -15,7 +15,7 @@
     // Make indexing stricter, not accessing unknown properties
     "noUncheckedIndexedAccess": true,
     "noPropertyAccessFromIndexSignature": false,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     // No accidental global script
     "moduleDetection": "force",
     "resolveJsonModule": true,
