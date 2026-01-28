@@ -1,4 +1,4 @@
-import { baseConfig, prettierConfig } from './index.mjs'
+import { prettierConfig, typescriptConfig } from './index.mjs'
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -7,7 +7,7 @@ export default [
   {
     ignores: ['**/*.d.ts']
   },
-  ...baseConfig,
+  ...typescriptConfig,
   ...prettierConfig,
   {
     rules: {

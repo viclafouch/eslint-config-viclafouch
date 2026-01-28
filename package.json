@@ -5,6 +5,9 @@
   "type": "module",
   "main": "./index.mjs",
   "types": "./index.d.ts",
+  "bin": {
+    "eslint-config-viclafouch": "./bin/init.js"
+  },
   "exports": {
     ".": {
       "types": "./index.d.ts",

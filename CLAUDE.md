@@ -4,14 +4,15 @@ This file documents the **@viclafouch/eslint-config-viclafouch** project to faci
 
 ## What is this project?
 
-This is a reusable ESLint and Prettier configuration package published on npm. It provides a comprehensive, modular set of linting and formatting rules designed for modern JavaScript/TypeScript projects. The goal is to share consistent code quality standards across all of Victor de la Fouchardiere's projects.
+This is a reusable ESLint and Prettier configuration package published on npm. It provides a comprehensive, modular set of linting and formatting rules designed for modern TypeScript projects. The goal is to share consistent code quality standards across all of Victor de la Fouchardiere's projects.
 
 **Key features:**
-- JavaScript ES6+, TypeScript, JSX/TSX support
+- TypeScript-first configuration (all projects are TypeScript by default)
+- ES6+, JSX/TSX support
 - React.js and Next.js frameworks
 - Tailwind CSS v4 linting
-- Testing libraries support
 - Promise handling and best practices
+- Unicorn plugin for modern JavaScript
 
 ## File Structure
 
@@ -21,20 +22,28 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 |------|-------------|
 | `index.mjs` | Main entry point, exports all configuration modules |
 | `index.d.ts` | TypeScript type definitions for the package |
-| `eslint.config.mjs` | ESLint configuration for this package itself (uses baseConfig + prettierConfig) |
+| `eslint.config.mjs` | ESLint configuration for this package itself |
 
 ### Configuration Modules (root)
 
 | File | Description |
 |------|-------------|
-| `base.mjs` | Core JavaScript/TypeScript linting rules (imports all `/rules/` files) |
-| `typescript.mjs` | TypeScript-specific rules with parser and project service |
+| `typescript.mjs` | Wrapper that exports `rules/typescript.mjs` |
 | `react.mjs` | React library rules and JSX accessibility (jsx-a11y) |
 | `next.mjs` | Next.js-specific rules (extends react + hooks + Next.js plugin) |
 | `hooks.mjs` | React Hooks rules (rules-of-hooks, exhaustive-deps, useState naming) |
 | `imports.mjs` | Import sorting with simple-import-sort in priority groups |
 | `prettier.mjs` | Prettier integration via eslint-plugin-prettier |
 | `better-tailwindcss.mjs` | Tailwind CSS v4 linting (function accepting `{ entryPoint }`) |
+
+### Rules Directory
+
+| File | Description |
+|------|-------------|
+| `rules/typescript.mjs` | **Main configuration file.** Contains all base rules (best practices, ES6+, variables, errors, style, node) + TypeScript rules + Unicorn + Promise plugins |
+| `rules/imports.mjs` | Import sorting rules with alias detection from tsconfig/jsconfig |
+| `rules/react.mjs` | React-specific rules |
+| `rules/react-hooks.mjs` | React Hooks rules |
 
 ### Utility Files for Other Projects
 
@@ -61,51 +70,34 @@ npm run publish:beta  # Publish beta version
 Each module exports an array of configurations that can be spread:
 
 ```javascript
-// Minimal setup
-import { baseConfig } from '@viclafouch/eslint-config-viclafouch'
-export default [...baseConfig]
+// Typical Next.js setup
+import {
+  typescriptConfig,
+  nextConfig,
+  importsConfig,
+  prettierConfig
+} from '@viclafouch/eslint-config-viclafouch'
 
-// Full Next.js setup
-import { baseConfig, typescriptConfig, nextConfig, prettierConfig } from '@viclafouch/eslint-config-viclafouch'
-export default [...baseConfig, ...typescriptConfig, ...nextConfig, ...prettierConfig]
+export default [
+  { ignores: ['**/node_modules/**', '**/.next/**'] },
+  ...typescriptConfig,
+  ...nextConfig,
+  ...importsConfig,
+  ...prettierConfig
+]
 ```
 
 ### Loading Hierarchy
 
-1. **baseConfig** → loads 7 rule modules + Unicorn plugin
-2. **typescriptConfig** → replaces some rules with TypeScript versions
-3. **reactConfig** → adds JSX/a11y rules
-4. **nextConfig** → extends react + hooks + Next.js plugin
-5. **importsConfig** → organizes import sorting
-6. **prettierConfig** → formatting (must be last)
-7. **betterTailwindcssConfig({ entryPoint })** → Tailwind CSS v4
-
-## Usage in Other Projects
-
-### Extending tsconfig.json
-
-```json
-{
-  "extends": "@viclafouch/eslint-config-viclafouch/tsconfig.json",
-  "compilerOptions": {
-    // Project-specific overrides
-  }
-}
-```
-
-### Using reset.d.ts
-
-The `reset.d.ts` file re-exports improved types from `@total-typescript/ts-reset`, providing:
-
-- Better inference for `.filter(Boolean)`
-- Stricter types for `JSON.parse`
-- Improved `Array.includes()`
-
-To use it, reference it in your project's tsconfig.json or include it in your types.
+1. **typescriptConfig** → Base configuration with all rules (ES6+, best practices, TypeScript, Unicorn, Promise)
+2. **nextConfig** → Next.js rules (includes React + Hooks + a11y)
+3. **reactConfig** + **hooksConfig** → For React without Next.js
+4. **importsConfig** → Import sorting
+5. **betterTailwindcssConfig({ entryPoint })** → Tailwind CSS v4
+6. **prettierConfig** → Formatting (must be last)
 
 ## Integrated Plugins
 
-- `@eslint/js` - Core ESLint rules
 - `typescript-eslint` - TypeScript linting
 - `eslint-plugin-react` - React rules
 - `eslint-plugin-react-hooks` - Hooks enforcement
@@ -131,6 +123,8 @@ To use it, reference it in your project's tsconfig.json or include it in your ty
 - Use `'error'` for rules that should be enforced
 - Use `'off'` for rules that should be disabled
 - **NEVER use `'warn'`** - warnings are not acceptable in this configuration
+
+**Exception**: `no-console` uses `'warn'` to allow console statements during development.
 
 This ensures that linting is either passing or failing, with no ambiguous middle ground.
 
@@ -162,4 +156,4 @@ For TypeScript rules, use the appropriate documentation URL:
 - TypeScript ESLint: `https://typescript-eslint.io/rules/rule-name`
 - React: `https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/rule-name.md`
 - React Hooks: `https://react.dev/reference/rules/rules-of-hooks`
-
+- Unicorn: `https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/rule-name.md`
