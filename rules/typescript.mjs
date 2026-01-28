@@ -97,6 +97,25 @@ export default defineConfig(
       // https://eslint.org/docs/rules/complexity
       complexity: ['error', 20],
 
+      // Disallow nested ternary expressions
+      // https://eslint.org/docs/latest/rules/no-nested-ternary
+      'no-nested-ternary': 'error',
+
+      // Enforce a maximum number of parameters in function definitions
+      // https://eslint.org/docs/latest/rules/max-params
+      'max-params': ['error', { max: 3 }],
+
+      // Enforce a maximum depth of nested blocks
+      // https://eslint.org/docs/latest/rules/max-depth
+      'max-depth': ['error', { max: 3 }],
+
+      // Enforce a maximum number of lines per function
+      // https://eslint.org/docs/latest/rules/max-lines-per-function
+      'max-lines-per-function': [
+        'error',
+        { max: 100, skipBlankLines: true, skipComments: true }
+      ],
+
       // Enforce that class methods use "this"
       // https://eslint.org/docs/rules/class-methods-use-this
       'class-methods-use-this': [
@@ -758,6 +777,10 @@ export default defineConfig(
       // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-reverse.md
       'unicorn/no-array-reverse': 'error',
 
+      // Prefer Array#toSorted() over Array#sort() to avoid mutation
+      // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-sort.md
+      'unicorn/no-array-sort': 'error',
+
       // Require using new when throwing an error
       // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md
       'unicorn/throw-new-error': 'error',
@@ -821,6 +844,10 @@ export default defineConfig(
       // Prefer [...iterable] over Array.from(iterable)
       // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md
       'unicorn/prefer-spread': 'off',
+
+      // Prefer ternary expressions over simple if-else statements (DISABLED - prefer if-else for clarity)
+      // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md
+      'unicorn/prefer-ternary': 'off',
 
       // Prefer omitting catch binding when unused
       // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md
@@ -957,9 +984,17 @@ export default defineConfig(
       'no-return-await': 'off',
       '@typescript-eslint/return-await': ['error', 'in-try-catch'],
 
-      // Accept banning ts lines
+      // Disallow @ts-<directive> comments or require descriptions after directives
       // https://typescript-eslint.io/rules/ban-ts-comment
-      '@typescript-eslint/ban-ts-comment': 'off',
+      '@typescript-eslint/ban-ts-comment': [
+        'error',
+        {
+          'ts-expect-error': 'allow-with-description',
+          'ts-ignore': 'allow-with-description',
+          'ts-nocheck': 'allow-with-description',
+          'ts-check': false
+        }
+      ],
 
       // Naming convention for type parameters
       // https://typescript-eslint.io/rules/naming-convention
@@ -980,6 +1015,25 @@ export default defineConfig(
       // Require consistently using T[] instead of Array<T>
       // https://typescript-eslint.io/rules/array-type
       '@typescript-eslint/array-type': 'error',
+
+      // Enforce type definitions to consistently use type instead of interface
+      // https://typescript-eslint.io/rules/consistent-type-definitions
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+
+      // Disallow the any type
+      // https://typescript-eslint.io/rules/no-explicit-any
+      '@typescript-eslint/no-explicit-any': 'error',
+
+      // Require Promise-like statements to be handled appropriately
+      // https://typescript-eslint.io/rules/no-floating-promises
+      '@typescript-eslint/no-floating-promises': [
+        'error',
+        { ignoreVoid: true }
+      ],
+
+      // Disallow explicit return type annotations on functions (trust inference)
+      // https://typescript-eslint.io/rules/explicit-function-return-type
+      '@typescript-eslint/explicit-function-return-type': 'off',
 
       // Forbid delete array, use splice for example
       // https://typescript-eslint.io/rules/no-array-delete

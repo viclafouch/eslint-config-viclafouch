@@ -376,6 +376,10 @@ export default [
         }
       ],
 
+      // Require or prevent a new line after jsx elements and expressions
+      // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-newline.md
+      'react/jsx-newline': ['error', { prevent: true }],
+
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/66b58dd4864678eb869a7bf434c72ff7ac530eb1/docs/rules/no-object-type-as-default-prop.md
       'react/no-object-type-as-default-prop': 'error',
 
@@ -395,7 +399,35 @@ export default [
 
       // Disable spreading props in components more than once
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.35.0/docs/rules/jsx-props-no-spread-multi.md
-      'react/jsx-props-no-spread-multi': 'off'
+      'react/jsx-props-no-spread-multi': 'off',
+
+      // Disallow destructured imports from React and ReactDOM - use React.useState, React.useEffect, etc.
+      // Disallow useMemo and useCallback unless proven performance problem
+      // https://eslint.org/docs/latest/rules/no-restricted-syntax
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ImportDeclaration[source.value="react"] ImportSpecifier',
+          message:
+            'Use React.useState, React.useEffect, etc. instead of destructuring React imports.'
+        },
+        {
+          selector:
+            'ImportDeclaration[source.value="react-dom"] ImportSpecifier',
+          message:
+            'Use ReactDOM.createRoot, etc. instead of destructuring ReactDOM imports.'
+        },
+        {
+          selector: 'CallExpression[callee.property.name="useMemo"]',
+          message:
+            'Avoid React.useMemo unless you have a proven performance problem.'
+        },
+        {
+          selector: 'CallExpression[callee.property.name="useCallback"]',
+          message:
+            'Avoid React.useCallback unless you have a proven performance problem.'
+        }
+      ]
     }
   },
   {
