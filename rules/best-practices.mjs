@@ -58,7 +58,7 @@ export default {
 
     // Require return statements to either always or never specify values
     // https://eslint.org/docs/rules/consistent-return
-    'consistent-return': 'error',
+    'consistent-return': ['error', { treatUndefinedAsUnspecified: true }],
 
     // Disallow comparing against -0
     // https://eslint.org/docs/latest/rules/no-compare-neg-zero

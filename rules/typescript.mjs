@@ -182,7 +182,7 @@ export default tseslint.config(
 
       // Disallow passing a value-returning function where void is expected
       // https://typescript-eslint.io/rules/strict-void-return
-      '@typescript-eslint/strict-void-return': 'error'
+      '@typescript-eslint/strict-void-return': 'off'
 
       // Prefer using nullish coalescing (??) over logical (||) when possible.
       // '@typescript-eslint/prefer-nullish-coalescing': 'error'

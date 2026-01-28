@@ -202,10 +202,10 @@ export default {
 
     // Disallow async functions which have no await expression
     // https://eslint.org/docs/latest/rules/require-await
-    'require-await': 'error',
+    'require-await': 'off',
 
     // Prefer to use async/await for Promises
-    'promise/prefer-await-to-then': 'error',
+    'promise/prefer-await-to-then': 'off',
 
     // Disallow using an async function as a Promise executor
     // https://eslint.org/docs/latest/rules/no-async-promise-executor
