@@ -10,8 +10,8 @@ const filename = fileURLToPath(import.meta.url)
 const directory = dirname(filename)
 
 const TEMPLATES = {
-  1: { name: 'React', file: 'react.js' },
-  2: { name: 'Next.js', file: 'nextjs.js' },
+  1: { name: 'TypeScript + React', file: 'react.js' },
+  2: { name: 'TypeScript + Next.js', file: 'nextjs.js' },
   3: { name: 'Pure TypeScript', file: 'typescript.js' }
 }
 
@@ -65,7 +65,9 @@ async function main() {
 
   console.log(`\neslint.config.js created with ${choice.name} configuration.\n`)
   console.log('Next steps:')
-  console.log('  1. Run: npm i -D @viclafouch/eslint-config-viclafouch')
+  console.log(
+    '  1. Run: npm i -D @viclafouch/eslint-config-viclafouch eslint prettier typescript'
+  )
   console.log('  2. Run: npm run lint\n')
 
   rl.close()
