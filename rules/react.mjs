@@ -1,4 +1,3 @@
-import jsxA11y from 'eslint-plugin-jsx-a11y'
 import pluginReact from 'eslint-plugin-react'
 import testingLibrary from 'eslint-plugin-testing-library'
 import globals from 'globals'
@@ -7,7 +6,6 @@ import globals from 'globals'
  * @type {import("eslint").Linter.Config}
  */
 export default [
-  jsxA11y.flatConfigs.recommended,
   {
     files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     name: 'react',
@@ -393,9 +391,6 @@ export default [
           ]
         }
       ],
-
-      // Don't require captions for video / audio
-      'jsx-a11y/media-has-caption': 'off',
 
       // Disable spreading props in components more than once
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/v7.35.0/docs/rules/jsx-props-no-spread-multi.md

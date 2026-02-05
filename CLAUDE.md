@@ -10,6 +10,7 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 - TypeScript-first configuration (all projects are TypeScript by default)
 - ES6+, JSX/TSX support
 - React.js and Next.js frameworks
+- React Native support
 - Promise handling and best practices
 - Unicorn plugin for modern JavaScript
 
@@ -28,7 +29,9 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | File | Description |
 |------|-------------|
 | `typescript.mjs` | Wrapper that exports `rules/typescript.mjs` |
-| `react.mjs` | React library rules and JSX accessibility (jsx-a11y) |
+| `react.mjs` | React library rules (without jsx-a11y) |
+| `react-native.mjs` | React Native rules (RN-specific rules, disables web-only React rules) |
+| `jsx-a11y.mjs` | Web accessibility rules (jsx-a11y) - for web projects only |
 | `next.mjs` | Next.js-specific rules (extends react + hooks + Next.js plugin) |
 | `hooks.mjs` | React Hooks rules (rules-of-hooks, exhaustive-deps, useState naming) |
 | `imports.mjs` | Import sorting with simple-import-sort in priority groups |
@@ -42,6 +45,8 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | `rules/imports.mjs` | Import sorting rules with alias detection from tsconfig/jsconfig |
 | `rules/react.mjs` | React-specific rules |
 | `rules/react-hooks.mjs` | React Hooks rules |
+| `rules/react-native.mjs` | React Native rules (no-unused-styles, no-inline-styles, no-color-literals, no-raw-text) |
+| `rules/jsx-a11y.mjs` | Web accessibility rules (eslint-plugin-jsx-a11y recommended config) |
 
 ### CLI
 
@@ -70,6 +75,14 @@ npm run bump:beta     # Increment beta version
 npm run publish:beta  # Publish beta version
 ```
 
+## Documentation
+
+**IMPORTANT**: Keep `README.md` up to date when making changes to the project:
+- Update usage examples when adding/removing/renaming exported configs
+- Update the list of available configurations
+- Document breaking changes
+- Keep installation instructions current
+
 ## Configuration Architecture
 
 ### Flat Config Pattern (ESLint 9+)
@@ -97,16 +110,18 @@ export default [
 ### Loading Hierarchy
 
 1. **typescriptConfig** → Base configuration with all rules (ES6+, best practices, TypeScript, Unicorn, Promise)
-2. **nextConfig** → Next.js rules (includes React + Hooks + a11y)
-3. **reactConfig** + **hooksConfig** → For React without Next.js
-4. **importsConfig** → Import sorting
-5. **prettierConfig** → Formatting (must be last)
+2. **nextConfig** → Next.js rules (includes React + Hooks + jsx-a11y)
+3. **reactConfig** + **hooksConfig** + **jsxA11yConfig** → For React web projects
+4. **reactConfig** + **hooksConfig** + **reactNativeConfig** → For React Native projects
+5. **importsConfig** → Import sorting
+6. **prettierConfig** → Formatting (must be last)
 
 ## Integrated Plugins
 
 - `typescript-eslint` - TypeScript linting
 - `eslint-plugin-react` - React rules
 - `eslint-plugin-react-hooks` - Hooks enforcement
+- `eslint-plugin-react-native` - React Native specific
 - `eslint-plugin-jsx-a11y` - Accessibility
 - `eslint-plugin-import` + `simple-import-sort` - Import ordering
 - `eslint-plugin-promise` - Promise handling
@@ -161,4 +176,5 @@ For TypeScript rules, use the appropriate documentation URL:
 - TypeScript ESLint: `https://typescript-eslint.io/rules/rule-name`
 - React: `https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/rule-name.md`
 - React Hooks: `https://react.dev/reference/rules/rules-of-hooks`
+- React Native: `https://github.com/Intellicode/eslint-plugin-react-native/blob/master/docs/rules/rule-name.md`
 - Unicorn: `https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/rule-name.md`

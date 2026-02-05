@@ -47,9 +47,10 @@ export default {
             // E.g: import { useState } from 'react'
             // E.g: import { useFela } from 'react-fela'
             '^react',
-            // Anything that starts with next
+            // Anything that starts with next/remix/expo
             // E.g: import { useRouter } from 'next/router'
-            '^(next|@remix)',
+            // E.g: import { Stack } from 'expo-router'
+            '^(next|@remix|expo)',
             // Anything that starts with a letter
             // E.g: import Downshift from 'downshift'
             '^[a-z]',

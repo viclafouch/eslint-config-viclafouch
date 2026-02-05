@@ -16,12 +16,14 @@ npx @viclafouch/eslint-config-viclafouch
 
 This will prompt you to select your stack and create the `eslint.config.js` file automatically.
 
-## Manual Setup (React)
+## Manual Setup (React Web)
 
 ```js
 // eslint.config.js
 import {
+  hooksConfig,
   importsConfig,
+  jsxA11yConfig,
   prettierConfig,
   reactConfig,
   typescriptConfig
@@ -40,6 +42,8 @@ export default [
   },
   ...typescriptConfig,
   ...reactConfig,
+  ...hooksConfig,
+  ...jsxA11yConfig,
   ...importsConfig,
   ...prettierConfig
 ]
@@ -54,6 +58,7 @@ export default [
 import {
   hooksConfig,
   importsConfig,
+  jsxA11yConfig,
   prettierConfig,
   reactConfig,
   typescriptConfig
@@ -67,6 +72,7 @@ export default [
   ...typescriptConfig,
   ...reactConfig,
   ...hooksConfig,
+  ...jsxA11yConfig,
   ...importsConfig,
   ...prettierConfig
 ]
@@ -116,14 +122,43 @@ export default [
 ]
 ```
 
+### React Native (Expo)
+
+```js
+// eslint.config.js
+import {
+  hooksConfig,
+  importsConfig,
+  prettierConfig,
+  reactConfig,
+  reactNativeConfig,
+  typescriptConfig
+} from '@viclafouch/eslint-config-viclafouch'
+
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+export default [
+  { ignores: ['**/node_modules/**', '**/.expo/**', '**/ios/**', '**/android/**'] },
+  ...typescriptConfig,
+  ...reactConfig,
+  ...hooksConfig,
+  ...reactNativeConfig,
+  ...importsConfig,
+  ...prettierConfig
+]
+```
+
 ## Available Configurations
 
 | Config | Description |
 |--------|-------------|
 | `typescriptConfig` | **Required base.** TypeScript, ES6+, best practices, unicorn, promise |
-| `reactConfig` | React and JSX a11y |
+| `reactConfig` | React rules |
 | `hooksConfig` | React Hooks |
-| `nextConfig` | Next.js (includes React + Hooks + a11y) |
+| `jsxA11yConfig` | Web accessibility (jsx-a11y) - for web projects |
+| `reactNativeConfig` | React Native specific rules |
+| `nextConfig` | Next.js (includes React + Hooks + jsx-a11y) |
 | `importsConfig` | Automatic import sorting |
 | `prettierConfig` | Prettier (always last) |
 
@@ -181,5 +216,6 @@ import '@viclafouch/eslint-config-viclafouch/reset.d'
 1. `ignores` (always first)
 2. `typescriptConfig` (base)
 3. `reactConfig` / `nextConfig` / `hooksConfig`
-4. `importsConfig`
-5. `prettierConfig` (always last)
+4. `jsxA11yConfig` (web) or `reactNativeConfig` (mobile)
+5. `importsConfig`
+6. `prettierConfig` (always last)

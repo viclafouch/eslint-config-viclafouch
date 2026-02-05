@@ -1,5 +1,6 @@
 import nextPlugin from '@next/eslint-plugin-next'
 import hooksConfig from './hooks.mjs'
+import jsxA11yConfig from './jsx-a11y.mjs'
 import reactConfig from './react.mjs'
 
 /**
@@ -8,6 +9,7 @@ import reactConfig from './react.mjs'
 export default [
   ...reactConfig,
   ...hooksConfig,
+  ...jsxA11yConfig,
   nextPlugin.configs.recommended,
   {
     rules: {

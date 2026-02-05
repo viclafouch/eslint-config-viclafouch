@@ -1,6 +1,8 @@
 export { default as hooksConfig } from './hooks.mjs'
 export { default as importsConfig } from './imports.mjs'
+export { default as jsxA11yConfig } from './jsx-a11y.mjs'
 export { default as nextConfig } from './next.mjs'
 export { default as prettierConfig } from './prettier.mjs'
 export { default as reactConfig } from './react.mjs'
+export { default as reactNativeConfig } from './react-native.mjs'
 export { default as typescriptConfig } from './typescript.mjs'
