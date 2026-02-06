@@ -42,7 +42,7 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | File | Description |
 |------|-------------|
 | `rules/typescript.mjs` | **Main configuration file.** Contains all base rules (best practices, ES6+, variables, errors, style, node) + TypeScript rules + Unicorn + Promise plugins |
-| `rules/imports.mjs` | Import sorting rules with alias detection from tsconfig/jsconfig |
+| `rules/imports.mjs` | Import sorting rules with @/ and ~/ alias support |
 | `rules/react.mjs` | React-specific rules |
 | `rules/react-hooks.mjs` | React Hooks rules |
 | `rules/react-native.mjs` | React Native rules (no-unused-styles, no-inline-styles, no-color-literals, no-raw-text) |
