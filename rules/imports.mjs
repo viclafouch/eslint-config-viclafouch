@@ -1,24 +1,5 @@
-import appRoot from 'app-root-path'
 import importPlugin from 'eslint-plugin-import'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
-import { getTsconfig } from 'get-tsconfig'
-
-function extractPaths(paths) {
-  return Object.keys(paths).map((key) => {
-    return key.split('/')[0]
-  })
-}
-
-const tsConfig = getTsconfig(appRoot.path, 'tsconfig.json')
-const jsConfig = getTsconfig(appRoot.path, 'jsconfig.json')
-
-let pathsNames = []
-
-if (tsConfig && tsConfig.config.compilerOptions.paths) {
-  pathsNames = extractPaths(tsConfig.config.compilerOptions.paths)
-} else if (jsConfig && jsConfig.config.compilerOptions.paths) {
-  pathsNames = extractPaths(jsConfig.config.compilerOptions.paths)
-}
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -54,10 +35,11 @@ export default {
             // Anything that starts with a letter
             // E.g: import Downshift from 'downshift'
             '^[a-z]',
-            // Anything that starts with an alias (see jsconfig.json)
-            // E.g: import ListDropdown from '@shared/components/ListDropdown'
-            `^(${pathsNames.join('|')})(/.*|$)`,
-            // Anything that starts with @
+            // Anything that starts with an alias @/ or ~/
+            // E.g: import ListDropdown from '@/components/ListDropdown'
+            // E.g: import config from '~/config'
+            '^(@|~)/',
+            // Anything that starts with @ (scoped packages)
             // E.g: import { yupResolver } from '@hookform/resolvers/yup'
             '^@',
             // Anything that starts with a dot

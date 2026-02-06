@@ -41,15 +41,9 @@
     "typescript": ">= 5"
   },
   "dependencies": {
-    "@babel/core": "^7.28.6",
-    "@babel/eslint-parser": "^7.28.6",
-    "@eslint/js": "^9.39.2",
     "@next/eslint-plugin-next": "^16.1.6",
     "@total-typescript/ts-reset": "^0.6.1",
-    "app-root-path": "^3.1.0",
-    "babel-loader": "^10.0.0",
     "eslint": ">= 9",
-    "eslint-plugin-better-tailwindcss": "^4.0.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.5",
@@ -61,7 +55,6 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-testing-library": "^7.15.4",
     "eslint-plugin-unicorn": "^62.0.0",
-    "get-tsconfig": "^4.13.0",
     "globals": "^17.3.0",
     "prettier": ">= 3",
     "prettier-plugin-curly": "^0.4.1",
