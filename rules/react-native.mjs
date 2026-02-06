@@ -71,7 +71,21 @@ export default [
       'react/no-invalid-html-attribute': 'off',
 
       // Allow useMemo and useCallback in React Native (performance is more critical on mobile)
-      'no-restricted-syntax': 'off'
+      // Re-declare no-restricted-syntax without useMemo/useCallback selectors (setting 'off' would also disable import restrictions)
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ImportDeclaration[source.value="react"] ImportSpecifier',
+          message:
+            'Use React.useState, React.ReactNode, etc. instead of destructuring React imports.'
+        },
+        {
+          selector:
+            'ImportDeclaration[source.value="react-dom"] ImportSpecifier',
+          message:
+            'Use ReactDOM.createRoot, etc. instead of destructuring ReactDOM imports.'
+        }
+      ]
     }
   }
 ]
