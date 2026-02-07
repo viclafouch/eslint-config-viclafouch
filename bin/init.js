@@ -12,7 +12,8 @@ const directory = dirname(filename)
 const TEMPLATES = {
   1: { name: 'TypeScript + React', file: 'react.js' },
   2: { name: 'TypeScript + Next.js', file: 'nextjs.js' },
-  3: { name: 'Pure TypeScript', file: 'typescript.js' }
+  3: { name: 'TypeScript + React Native', file: 'react-native.js' },
+  4: { name: 'Pure TypeScript', file: 'typescript.js' }
 }
 
 const rl = createInterface({
@@ -36,7 +37,7 @@ async function main() {
 
   console.log('')
 
-  const answer = await question('Your choice (1-3): ')
+  const answer = await question('Your choice (1-4): ')
   const choice = TEMPLATES[answer]
 
   if (!choice) {

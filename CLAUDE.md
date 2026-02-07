@@ -126,7 +126,9 @@ export default [
 - `eslint-plugin-import` + `simple-import-sort` - Import ordering
 - `eslint-plugin-promise` - Promise handling
 - `eslint-plugin-unicorn` - Best practices
+- `eslint-plugin-testing-library` - Testing Library rules (auto-applied on test files via reactConfig)
 - `eslint-plugin-prettier` - Code formatting
+- `prettier-plugin-curly` - Enforces curly braces in control flow (via prettierConfig)
 - `@next/eslint-plugin-next` - Next.js specific
 
 ## Peer Dependencies

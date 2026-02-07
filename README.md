@@ -16,6 +16,12 @@ npx @viclafouch/eslint-config-viclafouch
 
 This will prompt you to select your stack and create the `eslint.config.js` file automatically.
 
+Available templates:
+1. TypeScript + React
+2. TypeScript + Next.js
+3. TypeScript + React Native
+4. Pure TypeScript
+
 ## Manual Setup (React Web)
 
 ```js
@@ -154,13 +160,13 @@ export default [
 | Config | Description |
 |--------|-------------|
 | `typescriptConfig` | **Required base.** TypeScript, ES6+, best practices, unicorn, promise |
-| `reactConfig` | React rules |
+| `reactConfig` | React rules (includes testing-library for test files) |
 | `hooksConfig` | React Hooks |
 | `jsxA11yConfig` | Web accessibility (jsx-a11y) - for web projects |
 | `reactNativeConfig` | React Native specific rules |
 | `nextConfig` | Next.js (includes React + Hooks + jsx-a11y) |
 | `importsConfig` | Automatic import sorting |
-| `prettierConfig` | Prettier (always last) |
+| `prettierConfig` | Prettier with prettier-plugin-curly (always last) |
 
 ## TypeScript
 
