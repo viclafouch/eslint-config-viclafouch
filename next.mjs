@@ -13,7 +13,6 @@ export default [
   nextPlugin.configs.recommended,
   {
     rules: {
-      'react/no-unescaped-entities': 'off',
       '@next/next/no-page-custom-font': 'off',
       // No error for anchor inside a Next Link
       'jsx-a11y/anchor-is-valid': [

@@ -231,7 +231,7 @@ export default [
 
       // Prevent invalid characters from appearing in markup
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md
-      'react/no-unescaped-entities': 'error',
+      'react/no-unescaped-entities': 'off',
 
       // Prevent passing of children as props
       // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
