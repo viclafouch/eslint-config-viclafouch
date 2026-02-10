@@ -41,24 +41,21 @@
     "typescript": ">= 5"
   },
   "dependencies": {
+    "@eslint/compat": "^2.0.2",
     "@next/eslint-plugin-next": "^16.1.6",
     "@total-typescript/ts-reset": "^0.6.1",
-    "eslint": ">= 9",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "@eslint/compat": "^2.0.2",
     "eslint-plugin-react-native": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-testing-library": "^7.15.4",
     "eslint-plugin-unicorn": "^62.0.0",
     "globals": "^17.3.0",
-    "prettier": ">= 3",
     "prettier-plugin-curly": "^0.4.1",
-    "typescript": ">= 5",
     "typescript-eslint": "^8.54.0"
   },
   "scripts": {
