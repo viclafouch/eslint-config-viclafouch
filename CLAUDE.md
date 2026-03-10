@@ -180,3 +180,7 @@ For TypeScript rules, use the appropriate documentation URL:
 - React Hooks: `https://react.dev/reference/rules/rules-of-hooks`
 - React Native: `https://github.com/Intellicode/eslint-plugin-react-native/blob/master/docs/rules/rule-name.md`
 - Unicorn: `https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/rule-name.md`
+
+## Dependency Upgrade Tracking
+
+When asked about the status of dependency upgrades (e.g. "où on en est dans la maj des deps"), **always read `UPGRADE_REVIEW.md`** at the root of the project first. This file contains a detailed review of each dependency's releases, new rules, breaking changes, and the ESLint 10 migration plan. Use it as the source of truth and update it as upgrades are completed.
