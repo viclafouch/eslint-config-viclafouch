@@ -1,6 +1,6 @@
 {
   "name": "@viclafouch/eslint-config-viclafouch",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "ESLint and Prettier Config from Victor de la Fouchardiere",
   "type": "module",
   "main": "./index.mjs",
