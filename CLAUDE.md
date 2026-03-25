@@ -35,6 +35,7 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | `next.mjs` | Next.js-specific rules (extends react + hooks + Next.js plugin) |
 | `hooks.mjs` | React Hooks rules (rules-of-hooks, exhaustive-deps, useState naming) |
 | `imports.mjs` | Import sorting with simple-import-sort in priority groups |
+| `playwright.mjs` | Playwright e2e testing rules |
 | `prettier.mjs` | Prettier integration via eslint-plugin-prettier |
 
 ### Rules Directory
@@ -47,6 +48,7 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | `rules/react-hooks.mjs` | React Hooks rules |
 | `rules/react-native.mjs` | React Native rules (no-unused-styles, no-inline-styles, no-color-literals, no-raw-text) |
 | `rules/jsx-a11y.mjs` | Web accessibility rules (eslint-plugin-jsx-a11y recommended config) |
+| `rules/playwright.mjs` | Playwright e2e testing rules (recommended + additional rules) |
 
 ### CLI
 
@@ -127,6 +129,7 @@ export default [
 - `eslint-plugin-promise` - Promise handling
 - `eslint-plugin-unicorn` - Best practices
 - `eslint-plugin-testing-library` - Testing Library rules (auto-applied on test files via reactConfig)
+- `eslint-plugin-playwright` - Playwright e2e testing
 - `eslint-plugin-prettier` - Code formatting
 - `prettier-plugin-curly` - Enforces curly braces in control flow (via prettierConfig)
 - `@next/eslint-plugin-next` - Next.js specific

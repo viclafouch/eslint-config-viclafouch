@@ -165,6 +165,7 @@ export default [
 | `jsxA11yConfig` | Web accessibility (jsx-a11y) - for web projects |
 | `reactNativeConfig` | React Native specific rules |
 | `nextConfig` | Next.js (includes React + Hooks + jsx-a11y) |
+| `playwrightConfig` | Playwright e2e testing rules |
 | `importsConfig` | Automatic import sorting |
 | `prettierConfig` | Prettier with prettier-plugin-curly (always last) |
 
@@ -217,11 +218,39 @@ import '@viclafouch/eslint-config-viclafouch/reset.d'
 }
 ```
 
+## Playwright E2E Testing
+
+Add `playwrightConfig` scoped to your e2e test files:
+
+```js
+// eslint.config.js
+import {
+  importsConfig,
+  playwrightConfig,
+  prettierConfig,
+  reactConfig,
+  typescriptConfig
+} from '@viclafouch/eslint-config-viclafouch'
+
+export default [
+  { ignores: ['**/node_modules/**'] },
+  ...typescriptConfig,
+  ...reactConfig,
+  ...importsConfig,
+  {
+    files: ['**/e2e/**/*.spec.ts'],
+    ...playwrightConfig[0]
+  },
+  ...prettierConfig
+]
+```
+
 ## Configuration Order
 
 1. `ignores` (always first)
 2. `typescriptConfig` (base)
 3. `reactConfig` / `nextConfig` / `hooksConfig`
 4. `jsxA11yConfig` (web) or `reactNativeConfig` (mobile)
-5. `importsConfig`
-6. `prettierConfig` (always last)
+5. `playwrightConfig` (scoped to e2e test files)
+6. `importsConfig`
+7. `prettierConfig` (always last)
