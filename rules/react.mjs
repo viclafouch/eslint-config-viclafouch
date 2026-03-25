@@ -1,5 +1,4 @@
 import pluginReact from 'eslint-plugin-react'
-import testingLibrary from 'eslint-plugin-testing-library'
 import globals from 'globals'
 
 /**
@@ -430,15 +429,6 @@ export default [
     files: ['**/*.{ts,tsx}'],
     rules: {
       'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }]
-    }
-  },
-  {
-    // Enable eslint-plugin-testing-library rules or preset only for matching files!
-    files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-    ...testingLibrary.configs['flat/react'],
-    rules: {
-      ...testingLibrary.configs['flat/react'].rules,
-      'testing-library/render-result-naming-convention': 0
     }
   }
 ]

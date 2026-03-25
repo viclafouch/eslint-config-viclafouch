@@ -3,6 +3,7 @@ import type { Linter } from 'eslint'
 export declare const typescriptConfig: Linter.Config[]
 export declare const reactConfig: Linter.Config[]
 export declare const reactNativeConfig: Linter.Config[]
+export declare const testingLibraryConfig: Linter.Config[]
 export declare const jsxA11yConfig: Linter.Config[]
 export declare const nextConfig: Linter.Config[]
 export declare const playwrightConfig: Linter.Config[]

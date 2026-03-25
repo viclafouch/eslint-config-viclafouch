@@ -32,6 +32,7 @@ import {
   jsxA11yConfig,
   prettierConfig,
   reactConfig,
+  testingLibraryConfig,
   typescriptConfig
 } from '@viclafouch/eslint-config-viclafouch'
 
@@ -50,6 +51,10 @@ export default [
   ...reactConfig,
   ...hooksConfig,
   ...jsxA11yConfig,
+  {
+    files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+    ...testingLibraryConfig[0]
+  },
   ...importsConfig,
   ...prettierConfig
 ]
@@ -67,6 +72,7 @@ import {
   jsxA11yConfig,
   prettierConfig,
   reactConfig,
+  testingLibraryConfig,
   typescriptConfig
 } from '@viclafouch/eslint-config-viclafouch'
 
@@ -79,6 +85,10 @@ export default [
   ...reactConfig,
   ...hooksConfig,
   ...jsxA11yConfig,
+  {
+    files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+    ...testingLibraryConfig[0]
+  },
   ...importsConfig,
   ...prettierConfig
 ]
@@ -160,7 +170,8 @@ export default [
 | Config | Description |
 |--------|-------------|
 | `typescriptConfig` | **Required base.** TypeScript, ES6+, best practices, unicorn, promise |
-| `reactConfig` | React rules (includes testing-library for test files) |
+| `reactConfig` | React rules |
+| `testingLibraryConfig` | Testing Library rules (scope to your test files) |
 | `hooksConfig` | React Hooks |
 | `jsxA11yConfig` | Web accessibility (jsx-a11y) - for web projects |
 | `reactNativeConfig` | React Native specific rules |
@@ -251,6 +262,6 @@ export default [
 2. `typescriptConfig` (base)
 3. `reactConfig` / `nextConfig` / `hooksConfig`
 4. `jsxA11yConfig` (web) or `reactNativeConfig` (mobile)
-5. `playwrightConfig` (scoped to e2e test files)
+5. `testingLibraryConfig` / `playwrightConfig` (scoped to test files)
 6. `importsConfig`
 7. `prettierConfig` (always last)

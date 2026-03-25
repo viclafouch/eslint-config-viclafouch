@@ -29,13 +29,14 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | File | Description |
 |------|-------------|
 | `typescript.mjs` | Wrapper that exports `rules/typescript.mjs` |
-| `react.mjs` | React library rules (without jsx-a11y) |
+| `react.mjs` | React library rules (without jsx-a11y, without testing-library) |
 | `react-native.mjs` | React Native rules (RN-specific rules, disables web-only React rules) |
 | `jsx-a11y.mjs` | Web accessibility rules (jsx-a11y) - for web projects only |
 | `next.mjs` | Next.js-specific rules (extends react + hooks + Next.js plugin) |
 | `hooks.mjs` | React Hooks rules (rules-of-hooks, exhaustive-deps, useState naming) |
 | `imports.mjs` | Import sorting with simple-import-sort in priority groups |
 | `playwright.mjs` | Playwright e2e testing rules |
+| `testing-library.mjs` | Testing Library rules (separate from react config) |
 | `prettier.mjs` | Prettier integration via eslint-plugin-prettier |
 
 ### Rules Directory
@@ -49,6 +50,7 @@ This is a reusable ESLint and Prettier configuration package published on npm. I
 | `rules/react-native.mjs` | React Native rules (no-unused-styles, no-inline-styles, no-color-literals, no-raw-text) |
 | `rules/jsx-a11y.mjs` | Web accessibility rules (eslint-plugin-jsx-a11y recommended config) |
 | `rules/playwright.mjs` | Playwright e2e testing rules (recommended + additional rules) |
+| `rules/testing-library.mjs` | Testing Library rules (extracted from react config) |
 
 ### CLI
 
