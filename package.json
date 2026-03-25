@@ -41,8 +41,8 @@
     "typescript": ">= 5"
   },
   "dependencies": {
-    "@eslint/compat": "^2.0.2",
-    "@next/eslint-plugin-next": "^16.1.6",
+    "@eslint/compat": "^2.0.3",
+    "@next/eslint-plugin-next": "^16.2.1",
     "@total-typescript/ts-reset": "^0.6.1",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -52,11 +52,11 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-native": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-testing-library": "^7.15.4",
-    "eslint-plugin-unicorn": "^62.0.0",
-    "globals": "^17.3.0",
+    "eslint-plugin-testing-library": "^7.16.2",
+    "eslint-plugin-unicorn": "^63.0.0",
+    "globals": "^17.4.0",
     "prettier-plugin-curly": "^0.4.1",
-    "typescript-eslint": "^8.54.0"
+    "typescript-eslint": "^8.57.2"
   },
   "scripts": {
     "lint": "eslint .",
@@ -67,7 +67,7 @@
     "publish:beta": "npm publish --tag beta"
   },
   "devDependencies": {
-    "eslint": "^9.24.0",
-    "typescript": "^5.7.2"
+    "eslint": "^9.39.4",
+    "typescript": "^5.9.3"
   }
 }
